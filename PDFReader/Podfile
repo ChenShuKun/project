@@ -1,0 +1,11 @@
+platform :ios, ’9.0’
+target 'PDFReader' do
+
+
+
+
+pod 'MJRefresh'
+pod 'Masonry', '~> 1.1.0'
+pod 'MJExtension', '~> 3.0.15.1'
+
+end
