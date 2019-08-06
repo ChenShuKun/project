@@ -14,5 +14,8 @@
 
 #import "MJExtension.h"
 #import "MJRefresh.h"
+#import "SKPDFReader.h"
+#import "SVProgressHUD.h"
+
 
 #endif /* PrefixHeader_pch */

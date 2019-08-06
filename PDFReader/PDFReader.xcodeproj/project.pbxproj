@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -94,6 +94,20 @@
 		58DA88F222EED55F0057AD6B /* ThumbsMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA88DE22EED55F0057AD6B /* ThumbsMainToolbar.m */; };
 		58DA88F322EED55F0057AD6B /* ReaderMainPagebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA88DF22EED55F0057AD6B /* ReaderMainPagebar.m */; };
 		A392F8F3ED36BB602DC69679 /* libPods-PDFReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D523952BC84A2C969E95EA5B /* libPods-PDFReader.a */; };
+		BB845C8222F48006007238EA /* books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB845C8122F48006007238EA /* books.jpg */; };
+		BB845C8F22F482AE007238EA /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB845C8522F482AE007238EA /* SVRadialGradientLayer.m */; };
+		BB845C9022F482AE007238EA /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB845C8822F482AE007238EA /* SVProgressAnimatedView.m */; };
+		BB845C9122F482AE007238EA /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BB845C8B22F482AE007238EA /* SVProgressHUD.m */; };
+		BB845C9222F482AE007238EA /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB845C8C22F482AE007238EA /* SVIndefiniteAnimatedView.m */; };
+		BB845C9322F482AE007238EA /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BB845C8D22F482AE007238EA /* SVProgressHUD.bundle */; };
+		BBE816F422F430C800B64617 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE816F322F430C800B64617 /* TableHeaderView.m */; };
+		BBE8170822F45B0500B64617 /* nodatas.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BBE8170722F45B0300B64617 /* nodatas.jpeg */; };
+		BBE8170B22F460C300B64617 /* SKPDFReader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8170A22F460C300B64617 /* SKPDFReader.m */; };
+		BBE8170E22F463E900B64617 /* CollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8170D22F463E900B64617 /* CollectViewController.m */; };
+		BBE8171122F4687800B64617 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBE8170F22F4687800B64617 /* head.jpg */; };
+		BBE8171222F4687800B64617 /* no_head.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BBE8171022F4687800B64617 /* no_head.jpeg */; };
+		BBE8171522F4708C00B64617 /* InforViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8171422F4708C00B64617 /* InforViewController.m */; };
+		BBE8171822F47D7200B64617 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8171722F47D7200B64617 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +247,56 @@
 		58DA88DE22EED55F0057AD6B /* ThumbsMainToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbsMainToolbar.m; sourceTree = "<group>"; };
 		58DA88DF22EED55F0057AD6B /* ReaderMainPagebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderMainPagebar.m; sourceTree = "<group>"; };
 		71C6070E0CBBB65F4A6E0015 /* Pods-PDFReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFReader/Pods-PDFReader.debug.xcconfig"; sourceTree = "<group>"; };
+		BB845C8122F48006007238EA /* books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = books.jpg; sourceTree = "<group>"; };
+		BB845C8522F482AE007238EA /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		BB845C8622F482AE007238EA /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		BB845C8722F482AE007238EA /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		BB845C8822F482AE007238EA /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		BB845C8922F482AE007238EA /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		BB845C8A22F482AE007238EA /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		BB845C8B22F482AE007238EA /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		BB845C8C22F482AE007238EA /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		BB845C8D22F482AE007238EA /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		BB845C8E22F482AE007238EA /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		BB845C9522F489C8007238EA /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
+		BB845C9622F489C8007238EA /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
+		BB845C9722F489C8007238EA /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		BB845C9822F489C8007238EA /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		BB845C9922F489C8007238EA /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
+		BB845C9A22F489C8007238EA /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		BB845C9B22F489C8007238EA /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		BB845C9C22F489C8007238EA /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
+		BB845C9D22F489C8007238EA /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		BB845C9E22F489C8007238EA /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		BB845C9F22F489C8007238EA /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		BB845CA122F489C8007238EA /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		BB845CA222F489C8007238EA /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		BB845CA322F489C8007238EA /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		BB845CA422F489C8007238EA /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		BB845CA522F489C8007238EA /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		BB845CA622F489C8007238EA /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		BB845CA722F489C8007238EA /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		BB845CA822F489C8007238EA /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		BB845CA922F489C8007238EA /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		BB845CAA22F489C8007238EA /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		BB845CAB22F489C8007238EA /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		BB845CAC22F489C8007238EA /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		BB845CAD22F489C8007238EA /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		BB845CAE22F489C8007238EA /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		BB845CAF22F489C8007238EA /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		BBE816F222F430C800B64617 /* TableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableHeaderView.h; sourceTree = "<group>"; };
+		BBE816F322F430C800B64617 /* TableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableHeaderView.m; sourceTree = "<group>"; };
+		BBE8170722F45B0300B64617 /* nodatas.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nodatas.jpeg; sourceTree = "<group>"; };
+		BBE8170922F460C300B64617 /* SKPDFReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKPDFReader.h; sourceTree = "<group>"; };
+		BBE8170A22F460C300B64617 /* SKPDFReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKPDFReader.m; sourceTree = "<group>"; };
+		BBE8170C22F463E900B64617 /* CollectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectViewController.h; sourceTree = "<group>"; };
+		BBE8170D22F463E900B64617 /* CollectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectViewController.m; sourceTree = "<group>"; };
+		BBE8170F22F4687800B64617 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
+		BBE8171022F4687800B64617 /* no_head.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_head.jpeg; sourceTree = "<group>"; };
+		BBE8171322F4708C00B64617 /* InforViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InforViewController.h; sourceTree = "<group>"; };
+		BBE8171422F4708C00B64617 /* InforViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InforViewController.m; sourceTree = "<group>"; };
+		BBE8171622F47D7200B64617 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		BBE8171722F47D7200B64617 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D523952BC84A2C969E95EA5B /* libPods-PDFReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDFReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -296,6 +360,8 @@
 		588885D222EAC54100F28A50 /* PDFReader */ = {
 			isa = PBXGroup;
 			children = (
+				BB845C8322F482AE007238EA /* Third */,
+				BBE816F122F430A300B64617 /* Views */,
 				58BA5F6122EFE375003205F0 /* images */,
 				5888865722EAC9E200F28A50 /* PdfSources */,
 				5888860822EAC9E100F28A50 /* ReaderThird */,
@@ -307,6 +373,12 @@
 				5888868F22EAD78600F28A50 /* FirstViewController.m */,
 				5888869122EAD79100F28A50 /* SecondViewController.h */,
 				5888869222EAD79100F28A50 /* SecondViewController.m */,
+				BBE8170C22F463E900B64617 /* CollectViewController.h */,
+				BBE8170D22F463E900B64617 /* CollectViewController.m */,
+				BBE8171322F4708C00B64617 /* InforViewController.h */,
+				BBE8171422F4708C00B64617 /* InforViewController.m */,
+				BBE8171622F47D7200B64617 /* LoginViewController.h */,
+				BBE8171722F47D7200B64617 /* LoginViewController.m */,
 				58DA88B622EECA1E0057AD6B /* PrefixHeader.pch */,
 				588885D922EAC54200F28A50 /* Main.storyboard */,
 				588885DF22EAC54D00F28A50 /* Assets.xcassets */,
@@ -314,6 +386,8 @@
 				588885E422EAC54D00F28A50 /* Info.plist */,
 				588885E522EAC54D00F28A50 /* main.m */,
 				588885DC22EAC54200F28A50 /* PDFReader.xcdatamodeld */,
+				BBE8170922F460C300B64617 /* SKPDFReader.h */,
+				BBE8170A22F460C300B64617 /* SKPDFReader.m */,
 			);
 			path = PDFReader;
 			sourceTree = "<group>";
@@ -403,6 +477,10 @@
 		58BA5F6122EFE375003205F0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BB845C8122F48006007238EA /* books.jpg */,
+				BBE8170F22F4687800B64617 /* head.jpg */,
+				BBE8171022F4687800B64617 /* no_head.jpeg */,
+				BBE8170722F45B0300B64617 /* nodatas.jpeg */,
 				5895305D22F42D9A0082E958 /* ziyuan@2x.png */,
 				5895305B22F42C5D0082E958 /* shuji@2x.png */,
 				58BA5F6B22EFEAD8003205F0 /* 001.png */,
@@ -474,6 +552,82 @@
 				D523952BC84A2C969E95EA5B /* libPods-PDFReader.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB845C8322F482AE007238EA /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				BB845CA022F489C8007238EA /* Masonry */,
+				BB845C9422F489C8007238EA /* MJExtension */,
+				BB845C8422F482AE007238EA /* SVProgressHUD */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		BB845C8422F482AE007238EA /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BB845C8522F482AE007238EA /* SVRadialGradientLayer.m */,
+				BB845C8622F482AE007238EA /* SVIndefiniteAnimatedView.h */,
+				BB845C8722F482AE007238EA /* SVProgressHUD.h */,
+				BB845C8822F482AE007238EA /* SVProgressAnimatedView.m */,
+				BB845C8922F482AE007238EA /* SVProgressHUD-Prefix.pch */,
+				BB845C8A22F482AE007238EA /* SVRadialGradientLayer.h */,
+				BB845C8B22F482AE007238EA /* SVProgressHUD.m */,
+				BB845C8C22F482AE007238EA /* SVIndefiniteAnimatedView.m */,
+				BB845C8D22F482AE007238EA /* SVProgressHUD.bundle */,
+				BB845C8E22F482AE007238EA /* SVProgressAnimatedView.h */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		BB845C9422F489C8007238EA /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BB845C9522F489C8007238EA /* MJPropertyKey.h */,
+				BB845C9622F489C8007238EA /* NSObject+MJClass.h */,
+				BB845C9722F489C8007238EA /* NSString+MJExtension.h */,
+				BB845C9822F489C8007238EA /* NSObject+MJProperty.h */,
+				BB845C9922F489C8007238EA /* MJExtensionConst.h */,
+				BB845C9A22F489C8007238EA /* MJFoundation.h */,
+				BB845C9B22F489C8007238EA /* MJExtension.h */,
+				BB845C9C22F489C8007238EA /* MJPropertyType.h */,
+				BB845C9D22F489C8007238EA /* MJProperty.h */,
+				BB845C9E22F489C8007238EA /* NSObject+MJKeyValue.h */,
+				BB845C9F22F489C8007238EA /* NSObject+MJCoding.h */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		BB845CA022F489C8007238EA /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				BB845CA122F489C8007238EA /* MASCompositeConstraint.h */,
+				BB845CA222F489C8007238EA /* MASConstraint+Private.h */,
+				BB845CA322F489C8007238EA /* MASLayoutConstraint.h */,
+				BB845CA422F489C8007238EA /* NSArray+MASShorthandAdditions.h */,
+				BB845CA522F489C8007238EA /* MASConstraintMaker.h */,
+				BB845CA622F489C8007238EA /* View+MASAdditions.h */,
+				BB845CA722F489C8007238EA /* NSArray+MASAdditions.h */,
+				BB845CA822F489C8007238EA /* MASUtilities.h */,
+				BB845CA922F489C8007238EA /* MASViewAttribute.h */,
+				BB845CAA22F489C8007238EA /* MASViewConstraint.h */,
+				BB845CAB22F489C8007238EA /* MASConstraint.h */,
+				BB845CAC22F489C8007238EA /* NSLayoutConstraint+MASDebugAdditions.h */,
+				BB845CAD22F489C8007238EA /* View+MASShorthandAdditions.h */,
+				BB845CAE22F489C8007238EA /* Masonry.h */,
+				BB845CAF22F489C8007238EA /* ViewController+MASAdditions.h */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		BBE816F122F430A300B64617 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBE816F222F430C800B64617 /* TableHeaderView.h */,
+				BBE816F322F430C800B64617 /* TableHeaderView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,7 +735,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE8171222F4687800B64617 /* no_head.jpeg in Resources */,
 				588886A922EADE1500F28A50 /* App 如何通过注入动态库的方式实现极速编译调试.pdf in Resources */,
+				BBE8171122F4687800B64617 /* head.jpg in Resources */,
 				5888867322EAC9E200F28A50 /* Reader-Print.png in Resources */,
 				5888867122EAC9E200F28A50 /* AppIcon-167.png in Resources */,
 				5888867422EAC9E200F28A50 /* Reader-Button-N@2x.png in Resources */,
@@ -593,6 +749,7 @@
 				5895305C22F42C5D0082E958 /* shuji@2x.png in Resources */,
 				58BA5F7722EFEAD9003205F0 /* 001.png in Resources */,
 				58BA5F7022EFEAD9003205F0 /* 007.png in Resources */,
+				BB845C8222F48006007238EA /* books.jpg in Resources */,
 				58BA5F6F22EFEAD9003205F0 /* 008.png in Resources */,
 				5888868922EAC9E200F28A50 /* Reader-Export.png in Resources */,
 				5888868222EAC9E200F28A50 /* Reader-Print@3x.png in Resources */,
@@ -606,6 +763,7 @@
 				5888868822EAC9E200F28A50 /* Reader-Mark-N@3x.png in Resources */,
 				5888867822EAC9E200F28A50 /* Reader-Button-H.png in Resources */,
 				5888867522EAC9E200F28A50 /* Reader-Email@3x.png in Resources */,
+				BB845C9322F482AE007238EA /* SVProgressHUD.bundle in Resources */,
 				5888869F22EADE1500F28A50 /* Clang、Infer 和 OCLint ，我们应该使用谁来做静态分析？.pdf in Resources */,
 				588886A322EADE1500F28A50 /* Auto Layout 是怎么进行自动布局的，性能如何？.pdf in Resources */,
 				5888868022EAC9E200F28A50 /* Reader-Email.png in Resources */,
@@ -624,6 +782,7 @@
 				588886A622EADE1500F28A50 /* 无侵入的埋点方案如何实现.pdf in Resources */,
 				588886A522EADE1500F28A50 /* 链接器：符号是怎么绑定到地址上的？.pdf in Resources */,
 				5888867E22EAC9E200F28A50 /* Reader-Thumbs.png in Resources */,
+				BBE8170822F45B0500B64617 /* nodatas.jpeg in Resources */,
 				5888867622EAC9E200F28A50 /* Reader-Mark-Y@2x.png in Resources */,
 				588886A222EADE1500F28A50 /* 如何利用 Clang 为 App 提质？.pdf in Resources */,
 				58BA5F7422EFEAD9003205F0 /* 010.png in Resources */,
@@ -664,17 +823,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PDFReader/Pods-PDFReader-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PDFReader/Pods-PDFReader-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PDFReader/Pods-PDFReader-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PDFReader/Pods-PDFReader-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PDFReader/Pods-PDFReader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		801325E145FC38163C93DC23 /* [CP] Check Pods Manifest.lock */ = {
@@ -704,11 +862,16 @@
 			files = (
 				58DA88ED22EED55F0057AD6B /* ReaderThumbCache.m in Sources */,
 				58DA88E822EED55F0057AD6B /* ReaderThumbFetch.m in Sources */,
+				BB845C9022F482AE007238EA /* SVProgressAnimatedView.m in Sources */,
 				58DA88E222EED55F0057AD6B /* ReaderThumbQueue.m in Sources */,
+				BBE8171522F4708C00B64617 /* InforViewController.m in Sources */,
+				BB845C9222F482AE007238EA /* SVIndefiniteAnimatedView.m in Sources */,
+				BB845C9122F482AE007238EA /* SVProgressHUD.m in Sources */,
 				58DA88EA22EED55F0057AD6B /* ReaderMainToolbar.m in Sources */,
 				5888869322EAD79100F28A50 /* SecondViewController.m in Sources */,
 				58DA88E022EED55F0057AD6B /* ReaderContentTile.m in Sources */,
 				58DA88F222EED55F0057AD6B /* ThumbsMainToolbar.m in Sources */,
+				BBE8170B22F460C300B64617 /* SKPDFReader.m in Sources */,
 				588885DE22EAC54200F28A50 /* PDFReader.xcdatamodeld in Sources */,
 				588885D822EAC54100F28A50 /* ViewController.m in Sources */,
 				58DA88EE22EED55F0057AD6B /* ReaderThumbsView.m in Sources */,
@@ -719,6 +882,7 @@
 				58DA88EC22EED55F0057AD6B /* ReaderDocumentOutline.m in Sources */,
 				58DA88E622EED55F0057AD6B /* ReaderContentView.m in Sources */,
 				58DA88F322EED55F0057AD6B /* ReaderMainPagebar.m in Sources */,
+				BB845C8F22F482AE007238EA /* SVRadialGradientLayer.m in Sources */,
 				58DA88EB22EED55F0057AD6B /* ReaderDocument.m in Sources */,
 				58DA88E922EED55F0057AD6B /* ReaderThumbView.m in Sources */,
 				588885E622EAC54D00F28A50 /* main.m in Sources */,
@@ -728,6 +892,9 @@
 				58DA88EF22EED55F0057AD6B /* ThumbsViewController.m in Sources */,
 				5888869022EAD78600F28A50 /* FirstViewController.m in Sources */,
 				58DA88E122EED55F0057AD6B /* UIXToolbarView.m in Sources */,
+				BBE816F422F430C800B64617 /* TableHeaderView.m in Sources */,
+				BBE8170E22F463E900B64617 /* CollectViewController.m in Sources */,
+				BBE8171822F47D7200B64617 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,17 +1068,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7QBZV3YGDE;
+				DEVELOPMENT_TEAM = 66RS37LLGX;
 				GCC_PREFIX_HEADER = PDFReader/PrefixHeader.pch;
 				INFOPLIST_FILE = PDFReader/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chenshukun.PDFReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.iosPDFReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Development;
+				PROVISIONING_PROFILE_SPECIFIER = PDFReading_development;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -926,12 +1093,12 @@
 				DEVELOPMENT_TEAM = 66RS37LLGX;
 				GCC_PREFIX_HEADER = PDFReader/PrefixHeader.pch;
 				INFOPLIST_FILE = PDFReader/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chenshukun.PDFReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.iosPDFReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = PDFReading_distribution;
 				TARGETED_DEVICE_FAMILY = 1;

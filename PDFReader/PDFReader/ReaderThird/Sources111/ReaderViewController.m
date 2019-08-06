@@ -832,16 +832,18 @@
 #if (READER_BOOKMARKS == TRUE) // Option
 
 	if (printInteraction != nil) [printInteraction dismissAnimated:YES];
-
+    NSString *name = document.fileNamess;
 	if ([document.bookmarks containsIndex:currentPage]) // Remove bookmark
 	{
 		[document.bookmarks removeIndex:currentPage]; [mainToolbar setBookmarkState:NO];
+        [[SKPDFReader sharedSingleton] removeObject:name];
 	}
 	else // Add the bookmarked page number to the bookmark index set
 	{
 		[document.bookmarks addIndex:currentPage]; [mainToolbar setBookmarkState:YES];
+        [[SKPDFReader sharedSingleton] addObject:name];
 	}
-
+    
 #endif // end of READER_BOOKMARKS Option
 }
 

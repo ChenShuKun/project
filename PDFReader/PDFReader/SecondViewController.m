@@ -7,6 +7,9 @@
 //
 
 #import "SecondViewController.h"
+#import "TableHeaderView.h"
+#import "InforViewController.h"
+#import "LoginViewController.h"
 
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) NSMutableArray *dataArray;
@@ -22,13 +25,18 @@
     }
     return _dataArray;
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
  
     
-    self.dataArray = [NSMutableArray arrayWithArray:[self getDatas]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucceed) name:@"reloadTableViewNSNotification" object:nil];
     
+    self.dataArray = [NSMutableArray arrayWithArray:[self getDatas]];
+
     
     [self initTableViewHeaderView];
     self.tableView.tableFooterView = [[UIView alloc]init];
@@ -41,13 +49,27 @@
     
     
 }
+- (void)loginSucceed {
+  
+    [self.dataArray addObject:@{@"name":@"退出",@"icon":@"",@"id":@"exit"}];
+    [self reloadTableView];
+}
+
+- (void)reloadTableView {
+
+    self.tableView.tableHeaderView = nil;
+    [self initTableViewHeaderView];
+    [self.tableView reloadData];
+}
 
 - (void)initTableViewHeaderView {
-    
-    
-    UIView  *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
-    headerView.backgroundColor = [UIColor redColor];
+
+    TableHeaderView *headerView = [[TableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 230)];
     self.tableView.tableHeaderView = headerView;
+    headerView.block = ^(NSDictionary * _Nonnull dict, BOOL isLogIn) {
+        
+        [self goToInFor];
+    };
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,14 +98,56 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    
-    
     NSDictionary *dict =  self.dataArray[indexPath.row];
     NSLog(@"name = %@",dict[@"name"]);
-    
-    [self jumpToWithStoryBoardID:dict[@"id"]];
+    if ([dict[@"id"] isEqualToString:@"exit"]) {
+        
+        [self exitAlertActions];
+        
+    }else {
+        
+        [self jumpToWithStoryBoardID:dict[@"id"]];
+    }
+}
 
+#pragma mark:-- 退出操作
+- (void)exitAlertActions {
+    //第三个参数是对话框的类型（分为操作表类型 UIAlertControllerStyleActionSheet 和 警告框 UIAlertControllerStyleAlert ）
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil     message:@"确定要退出吗 ?" preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        NSLog(@"tap no button");
+    }];
+    
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^ void (UIAlertAction *action){
+        NSLog(@"tap yes button");
+        [self exitAction];
+    }];
+    
+    [alertController addAction:noAction];
+    [alertController addAction: yesAction];
+    
+    //以模态框的形式显示
+    [self presentViewController:alertController animated:true completion:^(){
+        NSLog(@"success");
+    }];
+    
+}
+
+- (void)exitAction {
+    
+    [SVProgressHUD show];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.dataArray removeLastObject];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@"123" forKey:@"userName"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [SVProgressHUD showSuccessWithStatus:@"登出成功"];
+        
+        [self reloadTableView];
+    });
 }
 
 - (NSArray *)getDatas {
@@ -92,7 +156,7 @@
               @{@"name":@"评论",@"icon":@"",@"id":@"commentViewConroller"},
               @{@"name":@"关注",@"icon":@"",@"id":@"attentionViewConroller"},
               @{@"name":@"收藏",@"icon":@"",@"id":@"collectViewConroller"},
-                @{@"name":@"关于",@"icon":@"",@"id":@"aboutViewController"},
+              @{@"name":@"关于",@"icon":@"",@"id":@"aboutViewController"},
                ];
 }
 
@@ -106,15 +170,28 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)goToInFor {
+    
+    //没有登录 去登录 ,否则看个人信息
+    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    BOOL hasLogIn =  [[SKPDFReader sharedSingleton] hasSaveUserName:name];
+    if (hasLogIn) {
+        NSLog(@"已经登录 ");
+        
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        InforViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"InforViewControllersss"];
+        vc.inforDict = [[SKPDFReader sharedSingleton] getInforData:name];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }else {
+        NSLog(@"没登录 ");
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LoginViewControllerSSS"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
-*/
+
 
 @end

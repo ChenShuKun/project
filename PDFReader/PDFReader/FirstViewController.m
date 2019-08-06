@@ -122,7 +122,6 @@
 
 #pragma mark:--- 点击进行 阅读
 - (void)goToPdfReaderViewControllerWithName:(NSString *)pdfName {
-
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:pdfName ofType:@"pdf"];
     NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
@@ -130,7 +129,7 @@
 //    NSString *filePath = [pdfs firstObject]; assert(filePath != nil); // Path to first PDF file
     
     ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
-    
+    document.fileNamess = pdfName;
     if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
 {
         ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
