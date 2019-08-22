@@ -8,8 +8,12 @@
 
 #import "DetailViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "DetailModel.h"
 
-@interface DetailViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate>
+@interface DetailViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate,UITableViewDataSource>
+
+@property (nonatomic ,strong) UITableView *tableiView ;
+@property (nonatomic ,strong) NSMutableArray *dataArray;
 
 @end
 
@@ -20,6 +24,13 @@
     
     [SVProgressHUD dismiss];
     [self.manager cancelPeripheralConnection:self.peripheral];
+}
+
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
 }
 
 - (void)viewDidLoad {
@@ -35,6 +46,22 @@
     NSString *message = @"设备连接中...";
     [SVProgressHUD showWithStatus:message];
     
+    
+    
+    self.tableiView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    self.tableiView.dataSource = self;
+    [self.view addSubview:self.tableiView];
+    
+
+    NSString *text = [NSString stringWithFormat:@"    【 %@db 】  %@\n\n    UUID:%@ \n    %@    \n }",
+                      self.detailModel.rssi,self.detailModel.name,self.detailModel.pheral.identifier.UUIDString,
+                      self.detailModel.advertisementData ];
+    
+    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+    textView.editable = NO;
+    textView.font = [UIFont systemFontOfSize:14];
+    textView.text = text;
+    self.tableiView.tableHeaderView = textView;
 }
 
 - (void)stopstopScan111 {
@@ -138,6 +165,16 @@
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error{
     NSLog(@"发现特征的服务:%@ (%@)",service.UUID.data ,service.UUID);
     
+    
+    
+    DetailModel *model = [[DetailModel alloc]init];
+    model.header_name = service.UUID.UUIDString;
+    model.header_type = service.UUID.UUIDString;
+    model.dataArray = [[NSMutableArray alloc]initWithArray:service.characteristics];
+    [self.dataArray addObject:model];
+    
+    [self.tableiView reloadData];
+    
     for (CBCharacteristic *c in service.characteristics) {
         NSLog(@"特征 UUID: %@ (%@)",c.UUID.data,c.UUID);
         // 此处FFE1为连接到蓝牙的特征UUID,我是获取之后写固定了,或许也可以不做该判断,我也不是太懂,如果有大神懂得希望指教一下.
@@ -145,7 +182,7 @@
             [_peripheral readValueForCharacteristic:c];
             [_peripheral setNotifyValue:YES forCharacteristic:c];
         }
-        
+      
     }
 }
 
@@ -200,14 +237,28 @@
     [peripheral readValueForCharacteristic:characteristic];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UITableView data Source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count;
 }
-*/
+ 
+ // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+ // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+ 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellID = @"CELLIUD";
+    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (cell==nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
+    }
+    
+    
+    DetailModel *model  = self.dataArray[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",model.header_type,model.header_name];
+    
+    return cell;
+}
+
 
 @end

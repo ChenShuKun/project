@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58048E4E230E6F120008BB02 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58048E4D230E6F120008BB02 /* DetailModel.m */; };
 		BB1E6EE32307E1BF00398994 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6EE22307E1BF00398994 /* AppDelegate.m */; };
 		BB1E6EE92307E1BF00398994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1E6EE72307E1BF00398994 /* Main.storyboard */; };
 		BB1E6EEC2307E1BF00398994 /* BluetoothHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6EEA2307E1BF00398994 /* BluetoothHelper.xcdatamodeld */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58048E4C230E6F120008BB02 /* DetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
+		58048E4D230E6F120008BB02 /* DetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		BB1E6EDE2307E1BF00398994 /* BluetoothHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1E6EE12307E1BF00398994 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB1E6EE22307E1BF00398994 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				BB1E6F382307EF7400398994 /* Model.m */,
 				BB1E6F3A2307FC7700398994 /* DetailViewController.h */,
 				BB1E6F3B2307FC7700398994 /* DetailViewController.m */,
+				58048E4C230E6F120008BB02 /* DetailModel.h */,
+				58048E4D230E6F120008BB02 /* DetailModel.m */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				BB1E6F2F2307E72C00398994 /* SVProgressAnimatedView.m in Sources */,
 				BB1E6EE32307E1BF00398994 /* AppDelegate.m in Sources */,
 				BB1E6F3C2307FC7700398994 /* DetailViewController.m in Sources */,
+				58048E4E230E6F120008BB02 /* DetailModel.m in Sources */,
 				BB1E6F1E2307E3AA00398994 /* MainViewController.m in Sources */,
 				BB1E6F212307E51200398994 /* SettingViewController.m in Sources */,
 				BB1E6F392307EF7400398994 /* Model.m in Sources */,
@@ -587,7 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 66RS37LLGX;
+				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = BluetoothHelper/PrefixHeader.pch;
 				INFOPLIST_FILE = BluetoothHelper/Info.plist;
@@ -598,7 +604,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.BluetoothHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = chenshukun_Development;
+				PROVISIONING_PROFILE_SPECIFIER = Development;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
