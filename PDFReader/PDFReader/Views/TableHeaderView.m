@@ -101,7 +101,7 @@
         
         NSLog(@"-----没登录 ");
         self.imagess.image = [UIImage imageNamed:@"no_head.jpeg"];
-        self.nameLabel.text = @"未登录";
+        self.nameLabel.text = @"游客AA03";
         self.desLabel.text = @"暂无描述";
         self.contentLabel.hidden = YES;
     }
