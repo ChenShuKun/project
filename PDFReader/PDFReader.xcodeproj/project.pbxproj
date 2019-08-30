@@ -668,9 +668,9 @@
 			isa = PBXGroup;
 			children = (
 				BBAE8CAF230ED47900AE35D6 /* NewsTableViewController.h */,
-				BBAE8CB0230ED47900AE35D6 /* SearchViewController.m */,
 				BBAE8CB1230ED47900AE35D6 /* NewsTableViewController.m */,
 				BBAE8CB2230ED47900AE35D6 /* SearchViewController.h */,
+				BBAE8CB0230ED47900AE35D6 /* SearchViewController.m */,
 			);
 			path = xinwen;
 			sourceTree = "<group>";
@@ -689,10 +689,10 @@
 			children = (
 				BBAE8CB7230ED47900AE35D6 /* SecondViewController.h */,
 				BBAE8CBC230ED47900AE35D6 /* SecondViewController.m */,
-				BBAE8CB8230ED47900AE35D6 /* LoginViewController.m */,
 				BBAE8CB9230ED47900AE35D6 /* InforViewController.m */,
 				BBAE8CBA230ED47900AE35D6 /* InforViewController.h */,
 				BBAE8CBB230ED47900AE35D6 /* LoginViewController.h */,
+				BBAE8CB8230ED47900AE35D6 /* LoginViewController.m */,
 			);
 			path = guanyu;
 			sourceTree = "<group>";

@@ -14,5 +14,7 @@
 #import "SVProgressHUD.h"
 #import "Model.h"
 
+//#define CHENSHUKUN_TEST
+
 
 #endif /* PrefixHeader_pch */

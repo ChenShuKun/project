@@ -12,10 +12,10 @@
 
 + (BOOL)isLogIn {
     
-//    NSString *token =  [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-//    if (token== nil || token.length == 0) {
-//        return NO;
-//    }
+    NSString *token =  [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    if (token== nil || token.length == 0) {
+        return NO;
+    }
     return YES;
 }
 
@@ -26,7 +26,7 @@
 
 + (NSString *)getToken {
     
-    return @"92d64aa2d83b237aae8eb3a49f4df030";
+//    return @"92d64aa2d83b237aae8eb3a49f4df030";
     if (![self isLogIn]) {
         return @"";
     }

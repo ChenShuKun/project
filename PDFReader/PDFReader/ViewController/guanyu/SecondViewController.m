@@ -25,8 +25,13 @@
     }
     return _dataArray;
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
+    if ([UserDefault isLogIn]) {
+        [self loginSucceed];
+    }
 }
 
 - (void)viewDidLoad {
@@ -49,10 +54,14 @@
     
     
 }
+
 - (void)loginSucceed {
   
-    [self.dataArray addObject:@{@"name":@"退出",@"icon":@"",@"id":@"exit"}];
-    [self reloadTableView];
+    NSDictionary *dict = @{@"name":@"退出",@"icon":@"",@"id":@"exit"};
+    if (![self.dataArray containsObject:dict]) {
+        [self.dataArray addObject:dict];
+        [self reloadTableView];
+    }
 }
 
 - (void)reloadTableView {
@@ -104,8 +113,18 @@
         
         [self exitAlertActions];
     }else {
-        
-        [self jumpToWithStoryBoardID:dict[@"id"]];
+        NSLog(@"--%@",@(indexPath.row));
+        if (![UserDefault isLogIn]) {
+            
+            if (indexPath.row == 1 || indexPath.row == 5) {
+                [self jumpToWithStoryBoardID:dict[@"id"]];
+            }else {
+                 [self goToLogin];
+            }
+        }else {
+            [self jumpToWithStoryBoardID:dict[@"id"]];
+        }
+       
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -142,14 +161,15 @@
         
         [self.dataArray removeLastObject];
         
-        [[NSUserDefaults standardUserDefaults] setObject:@"123" forKey:@"userName"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [UserDefault removeToken];
         
         [SVProgressHUD showSuccessWithStatus:@"登出成功"];
         
         [self reloadTableView];
     });
 }
+
+
 
 - (NSArray *)getDatas {
     return @[ @{@"name":@"等级",@"icon":@"",@"id":@"levelViewConroller"},
@@ -172,28 +192,26 @@
 }
 
 - (void)goToInFor {
-    
     //没有登录 去登录 ,否则看个人信息
-    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
-    BOOL hasLogIn =  [[SKPDFReader sharedSingleton] hasSaveUserName:name];
-    if (hasLogIn) {
+    if ([UserDefault isLogIn]) {
         NSLog(@"已经登录 ");
         
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         InforViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"InforViewControllersss"];
-        vc.inforDict = [[SKPDFReader sharedSingleton] getInforData:name];
+        vc.inforDict = [[SKPDFReader sharedSingleton] getInforData:@"244410894@qq.com"];
         [self.navigationController pushViewController:vc animated:YES];
         
     }else {
         NSLog(@"没登录 ");
-
-        
-        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        LoginViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LoginViewControllerSSS"];
-        [self presentViewController:vc animated:YES completion:nil];
-        
+        [self goToLogin];
     }
 }
 
+- (void)goToLogin {
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LoginViewControllerSSS"];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
 
 @end

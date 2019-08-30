@@ -107,12 +107,15 @@
     
     Model *mode =  self.dataArray[indexPath.row];
     
+    [self goToDetailWithModel:mode];
+}
+
+- (void)goToDetailWithModel:(Model *)mode {
     DetailViewController *detail = [[DetailViewController alloc]init];
     detail.detailModel = mode;
     self.manager.delegate = nil;
     [self.navigationController pushViewController:detail animated:YES];
 }
-
 #pragma mark - CBCentralManagerDelegate
 // 该方法当蓝牙状态改变(打开或者关闭)的时候就会调用
 -(void)centralManagerDidUpdateState:(CBCentralManager *)central
@@ -188,7 +191,13 @@
 
 - (IBAction)refreshActions:(UIBarButtonItem *)sender {
     NSLog(@"=== 刷新 ");
+  
+#ifdef CHENSHUKUN_TEST
+    [self goToDetailWithModel:nil];
+#else
     [self initCentralManager];
+#endif
+    
 }
 
 

@@ -12,7 +12,8 @@
 
 @interface NewsTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) NSMutableArray *dataArray;
-
+@property (assign, nonatomic) NSInteger page;
+@property (assign, nonatomic) NSInteger totalRow ;
 @end
 
 @implementation NewsTableViewController
@@ -28,8 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
-    [self getDatasWithParams:nil];
+    self.page = 1;
+    [self getDatasWithParams:self.page];
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
@@ -43,45 +44,19 @@
     
     
 }
-- (void)testData {
-    /*
-     
-     self.titleLable.text = dict[@"title"];
-     self.contentLabel.text = dict[@"content"];
-     self.sourceLabel.text = dict[@"source"];
-     self.careCountLabel.text = [NSString stringWithFormat:@"%@人关心",dict[@"careCount"]];
-     self.timeLabel.text = dict[@"time"];
-     */
-    for (int i = 0; i <10; i++) {
-        NSString *care = @"YES";
-        NSString *content = @" 阿斯兰的激发了的房间案例的";
-        if (i%2==0) {
-            care = @"NO";
-            content = @"大家发了肯德基疯狂夺金佛奥飓风破我金佛全文我解放啦是可敬的法拉盛  撒娇东方丽景阿斯蒂芬 怕啥积分破案件发假发票 就是批发价";
-        }
-        NSDictionary *dict = @{@"index":@(i),
-                               @"isCare":care,
-                               @"title":@"我是标题1111",
-                               @"content":content,
-                               @"source":@"北京电视台",
-                               @"careCount":@(i),
-                               @"time":@"08/17 12:34:22",
-                               @"detailUrl":@"http://www.baidu.com"
-                               };
-        [self.dataArray addObject:dict];
-    }
-}
 
-
-- (void)getDatasWithParams:(NSDictionary *)params {
+- (void)getDatasWithParams:(NSInteger)page  {
     
     [SVProgressHUD show];
-    [AFNetworkingManager requestGetUrlString:@"https://www.baidu.com" parameters:@{} successBlock:^(id  _Nonnull responseObject) {
+    [AFNetworkingManager requestGetUrlString:@"news/getNews" parameters:@{} successBlock:^(id  _Nonnull responseObject) {
         
         [SVProgressHUD dismiss];
-        [self testData];
+        NSArray *data = responseObject[@"data"];
+        if (data) {
+            [self.dataArray addObjectsFromArray:data];
+        }
+        [self endRefresh];
         
-        [self.tableView reloadData];
         
     } failureBlock:^(NSError * _Nonnull error) {
         
@@ -92,39 +67,38 @@
 //下拉刷新
 - (void)pullDownActions {
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self endRefresh];
-    });
+    self.page = 1;
+    [self.dataArray removeAllObjects];
+    [self getDatasWithParams:self.page];
+    
 }
 
 //上拉加载更多
 - (void)pullUpActions {
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [self testData];
-        
-        [self.tableView reloadData];
-        [self endRefresh];
-        
-        
-    });
+    self.page ++;
+    [self getDatasWithParams:self.page];
 }
 
 - (void)endRefresh {
     
+    [self.tableView reloadData];
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
     
-    if (self.dataArray.count > 32) {
+    
+    if (self.dataArray.count >= self.totalRow) {
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    }else {
+        [self.tableView.mj_footer resetNoMoreData];
     }
+    
 }
-
 
 #pragma mark - Table view data source
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110;
+    NSDictionary *dict  = self.dataArray[indexPath.row];
+    
+    return 60;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -139,7 +113,12 @@
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"NewsTableViewCell" owner:nil options:nil]lastObject];
     }
-    
+    /*
+     "id": 1,
+     "title": "莫砺锋教授谈“唐诗苑的入门与探幽”：读诗最后就是读人",
+     "url": "http://book.sina.com.cn/news/whxw/2019-08-19/doc-ihytcern1719802.shtml"
+     }
+     */
     NSDictionary *dict  = self.dataArray[indexPath.row];
     cell.dict = dict;
     return cell;
@@ -149,7 +128,8 @@
     NSDictionary *dict  = self.dataArray[indexPath.row];
     
     WebViewController *webView = [[WebViewController alloc]init];
-    webView.urlString = dict[@"detailUrl"];
+    webView.hidesBottomBarWhenPushed = YES;
+    webView.urlString = dict[@"url"];
     [self.navigationController pushViewController:webView animated:YES];
     
 }

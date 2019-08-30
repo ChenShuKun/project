@@ -22,6 +22,7 @@
     
     
     WebViewController *webView = [[WebViewController alloc]init];
+    webView.hidesBottomBarWhenPushed = YES;
     webView.urlString = @"https://www.douban.com/note/681081818/";
     [self.navigationController pushViewController:webView animated:YES];
 }

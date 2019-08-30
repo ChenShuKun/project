@@ -25,6 +25,7 @@
     [super viewDidAppear:animated];
     
     if (![UserDefault isLogIn]) {
+        [self.dataArray removeAllObjects];
         [self goToLoginViewController];
     }else{
         [self pullDownActions];
@@ -232,6 +233,11 @@
 #pragma mark:-- 是否关注了 // 是否收藏了
 - (void)changeCollectionOrFollowKey:(NSString *)keyStr value:(NSString *)value Message:(NSString *)message indexPath:(NSIndexPath *)indexPath {
     
+    if (![UserDefault isLogIn]) {
+        [self goToLoginViewController];
+        return;
+    }
+    
     NSDictionary *dict =  self.dataArray[indexPath.row];
     NSLog(@"type  == %@",keyStr);
     NSString *urlString = @"";
@@ -303,6 +309,12 @@
 #pragma mark:-- 长摁 关注作者 接口
 - (void)updateAuthorActions {
 
+    if (![UserDefault isLogIn]) {
+        [self goToLoginViewController];
+        return;
+    }
+    
+    
     NSDictionary *dict =  self.dataArray[self.focusOnIndex.row];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
 

@@ -10,7 +10,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DetailModel.h"
 
-@interface DetailViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate,UITableViewDataSource>
+@interface DetailViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic ,strong) UITableView *tableiView ;
 @property (nonatomic ,strong) NSMutableArray *dataArray;
@@ -50,6 +50,7 @@
     
     self.tableiView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableiView.dataSource = self;
+    self.tableiView.delegate = self;
     [self.view addSubview:self.tableiView];
     
 
@@ -62,6 +63,25 @@
     textView.font = [UIFont systemFontOfSize:14];
     textView.text = text;
     self.tableiView.tableHeaderView = textView;
+    
+    
+#ifdef CHENSHUKUN_TEST
+    
+    for (int i = 0; i < 5; i++) {
+        
+        DetailModel *model = [[DetailModel alloc]init];
+        model.header_name = [NSString stringWithFormat:@"我是标题 %@",@(i)];
+        model.header_type = @"1111";
+        model.dataArray = @[@{@"name":@"aaa",@"tpe":@"1"},@{@"name":@"bbb",@"tpe":@"2"}].mutableCopy;
+        
+        [self.dataArray addObject:model];
+    }
+#else
+    
+#endif
+    
+    
+    
 }
 
 - (void)stopstopScan111 {
@@ -171,10 +191,12 @@
     model.header_name = service.UUID.UUIDString;
     model.header_type = service.UUID.UUIDString;
     model.dataArray = [[NSMutableArray alloc]initWithArray:service.characteristics];
-    [self.dataArray addObject:model];
     
+    if (![self.dataArray containsObject:model]) {
+        [self.dataArray addObject:model];
+    }
     [self.tableiView reloadData];
-    
+   /*
     for (CBCharacteristic *c in service.characteristics) {
         NSLog(@"特征 UUID: %@ (%@)",c.UUID.data,c.UUID);
         // 此处FFE1为连接到蓝牙的特征UUID,我是获取之后写固定了,或许也可以不做该判断,我也不是太懂,如果有大神懂得希望指教一下.
@@ -184,6 +206,7 @@
         }
       
     }
+    */
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
@@ -239,22 +262,47 @@
 
 
 #pragma mark - UITableView data Source
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+/*
+ DetailModel *model = [[DetailModel alloc]init];
+ model.header_name = service.UUID.UUIDString;
+ model.header_type = service.UUID.UUIDString;
+ model.dataArray = [[NSMutableArray alloc]initWithArray:service.characteristics];
+ 
+ */
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataArray.count;
 }
- 
- // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
- // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
- 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44;
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+   
+    DetailModel *model  = self.dataArray[section];
+    return model.header_name;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    DetailModel *model  = self.dataArray[section];
+    return model.dataArray.count;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellID = @"CELLIUD";
+    static NSString *cellID = @"Cell_ID";
     UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell==nil) {
+    if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
     }
     
+    DetailModel *model  = self.dataArray[indexPath.section];
+    NSDictionary *dict = model.dataArray[indexPath.row];
     
-    DetailModel *model  = self.dataArray[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",model.header_type,model.header_name];
     
     return cell;

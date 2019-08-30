@@ -25,6 +25,7 @@
 - (IBAction)backActions:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (IBAction)loginBtn:(UIButton *)sender {
     
     if (self.nameTF.text.length == 0 || self.passworldTF.text.length == 0) {
@@ -33,31 +34,35 @@
     }
     
     NSString *name = self.nameTF.text;
-    
-    BOOL isSave = [[SKPDFReader sharedSingleton] hasSaveUserName:name];
-    if (!isSave) {
-        [SVProgressHUD showErrorWithStatus:@"请输入正确的用户名或密码"];
-        return;
-    }
-    
-    NSDictionary *dict = [[SKPDFReader sharedSingleton] getInforData:name];
-    if (![self.passworldTF.text isEqualToString:dict[@"password"]]) {
-        [SVProgressHUD showErrorWithStatus:@"请输入正确的密码"];
-        return;
-    }
-    
-    [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"userName"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    //http://127.0.0.1:8888/user/login?account=abc&password=123
+
     
     [SVProgressHUD show];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    NSDictionary *params = @{@"account":self.nameTF.text,
+                             @"password":self.passworldTF.text
+                             };
+    [AFNetworkingManager requestGetUrlString:@"user/login" parameters:params successBlock:^(id  _Nonnull responseObject) {
         
-        [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+        [SVProgressHUD dismiss];
+        if ([responseObject[@"code"] integerValue] == 0) {
+            
+            NSString *token = responseObject[@"data"][@"token"];
+            if (token) {
+                [UserDefault saveToken:token];
+            }
+
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"reloadTableViewNSNotification" object:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }else {
+            [SVProgressHUD showErrorWithStatus:responseObject[@"msg"]];
+        }
+    } failureBlock:^(NSError * _Nonnull error) {
         
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"reloadTableViewNSNotification" object:nil];
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+        NSLog(@"error  = %@",[error description]);
+        
+    }];
 
 }
 

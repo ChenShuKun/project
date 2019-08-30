@@ -33,15 +33,14 @@
     
     
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
-        [self pullDownActions];
-    }];
-    
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [self pullUpActions];
-    }];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//
+//        [self pullDownActions];
+//    }];
+//
+//    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+//        [self pullUpActions];
+//    }];
 }
 
 #pragma makr:-- actions
@@ -62,26 +61,22 @@
     [self.dataArray removeAllObjects];
     
     [SVProgressHUD show];
-    [AFNetworkingManager requestGetUrlString:@"https://www.baidu.com" parameters:@{} successBlock:^(id  _Nonnull responseObject) {
+    NSDictionary *params = @{@"page":@1,@"rows":@1000,@"name":name};
+    [AFNetworkingManager requestGetUrlString:@"page/getPageInfo" parameters:params successBlock:^(id  _Nonnull responseObject) {
         
         [SVProgressHUD dismiss];
-        [self.dataArray addObjectsFromArray:[self getArrayData1s]];
-        [self.tableView reloadData];
+        NSArray *data = responseObject[@"data"];
+    
+        if (data) {
+            [self.dataArray addObjectsFromArray:data];
+        }
+        [self endRefresh];
         
     } failureBlock:^(NSError * _Nonnull error) {
         
         NSLog(@"error  = %@",[error description]);
     }];
     
-}
-
-
-//下拉刷新
-- (void)pullDownActions {
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self endRefresh];
-    });
 }
 
 //上拉加载更多
@@ -96,12 +91,10 @@
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
     });
-    
-    
 }
 
 - (void)endRefresh {
-    
+    [self.tableView reloadData];
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
 }
