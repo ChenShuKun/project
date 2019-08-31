@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "ReaderViewController.h"
+#import "SearchViewController.h"
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource,ReaderViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,13 +25,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (![UserDefault isLogIn]) {
-        [self.dataArray removeAllObjects];
-        [self goToLoginViewController];
-    }else{
-        [self pullDownActions];
-    }
-    
+     [self pullDownActions];
 }
 
 -(NSMutableArray *)dataArray {
@@ -106,6 +101,16 @@
     }
 }
 
+- (IBAction)searchBooksActions:(UIBarButtonItem *)sender {
+    
+    if (![UserDefault isLogIn]) {
+        [self goToLoginViewController];
+        return;
+    }
+    
+    SearchViewController *search = [[SearchViewController alloc]init];
+    [self.navigationController pushViewController:search animated:YES];
+}
 
 
 
@@ -162,9 +167,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    if (![UserDefault isLogIn]) {
+        [self goToLoginViewController];
+        return;
+    }
     
     NSDictionary *dict =  self.dataArray[indexPath.row];
-    
     [self goToPdfReaderViewControllerWithName:dict[@"pafName"]];
 }
 
@@ -176,6 +184,7 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
+
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     return UITableViewCellEditingStyleDelete;
 }

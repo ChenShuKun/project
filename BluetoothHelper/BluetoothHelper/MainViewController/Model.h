@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSDictionary * advertisementData;
 
 @property (nonatomic, strong) CBPeripheral *pheral;
+@property (nonatomic, strong)  CBCentralManager *manager;
+
 
 - (NSString *)textLabelString;
 - (NSString *)detailTextString;

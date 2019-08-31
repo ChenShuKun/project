@@ -119,6 +119,12 @@
 		BBE8170B22F460C300B64617 /* SKPDFReader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8170A22F460C300B64617 /* SKPDFReader.m */; };
 		BBE8171122F4687800B64617 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBE8170F22F4687800B64617 /* head.jpg */; };
 		BBE8171222F4687800B64617 /* no_head.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BBE8171022F4687800B64617 /* no_head.jpeg */; };
+		BBF7CA94231966F900C60177 /* dengji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA8E231966F900C60177 /* dengji@2x.png */; };
+		BBF7CA95231966F900C60177 /* guanyuwomen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA8F231966F900C60177 /* guanyuwomen@2x.png */; };
+		BBF7CA96231966F900C60177 /* shoucang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA90231966F900C60177 /* shoucang@2x.png */; };
+		BBF7CA97231966F900C60177 /* guanzhu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA91231966F900C60177 /* guanzhu@2x.png */; };
+		BBF7CA98231966F900C60177 /* guanzhu_zuozhe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA92231966F900C60177 /* guanzhu_zuozhe@2x.png */; };
+		BBF7CA99231966F900C60177 /* shudan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA93231966F900C60177 /* shudan@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -328,6 +334,12 @@
 		BBE8170A22F460C300B64617 /* SKPDFReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKPDFReader.m; sourceTree = "<group>"; };
 		BBE8170F22F4687800B64617 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
 		BBE8171022F4687800B64617 /* no_head.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_head.jpeg; sourceTree = "<group>"; };
+		BBF7CA8E231966F900C60177 /* dengji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dengji@2x.png"; sourceTree = "<group>"; };
+		BBF7CA8F231966F900C60177 /* guanyuwomen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanyuwomen@2x.png"; sourceTree = "<group>"; };
+		BBF7CA90231966F900C60177 /* shoucang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shoucang@2x.png"; sourceTree = "<group>"; };
+		BBF7CA91231966F900C60177 /* guanzhu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanzhu@2x.png"; sourceTree = "<group>"; };
+		BBF7CA92231966F900C60177 /* guanzhu_zuozhe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanzhu_zuozhe@2x.png"; sourceTree = "<group>"; };
+		BBF7CA93231966F900C60177 /* shudan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shudan@2x.png"; sourceTree = "<group>"; };
 		D523952BC84A2C969E95EA5B /* libPods-PDFReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDFReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -502,6 +514,7 @@
 		58BA5F6122EFE375003205F0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BBF7CA8D231966F900C60177 /* 关于 */,
 				BB845C8122F48006007238EA /* books.jpg */,
 				BBE8170F22F4687800B64617 /* head.jpg */,
 				BBE8171022F4687800B64617 /* no_head.jpeg */,
@@ -761,6 +774,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BBF7CA8D231966F900C60177 /* 关于 */ = {
+			isa = PBXGroup;
+			children = (
+				BBF7CA8E231966F900C60177 /* dengji@2x.png */,
+				BBF7CA8F231966F900C60177 /* guanyuwomen@2x.png */,
+				BBF7CA90231966F900C60177 /* shoucang@2x.png */,
+				BBF7CA91231966F900C60177 /* guanzhu@2x.png */,
+				BBF7CA92231966F900C60177 /* guanzhu_zuozhe@2x.png */,
+				BBF7CA93231966F900C60177 /* shudan@2x.png */,
+			);
+			path = "关于";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -887,6 +913,7 @@
 				58BA5F7522EFEAD9003205F0 /* 003.png in Resources */,
 				58BA5F7622EFEAD9003205F0 /* 002.png in Resources */,
 				58BA5F7822EFEAD9003205F0 /* 004.png in Resources */,
+				BBF7CA98231966F900C60177 /* guanzhu_zuozhe@2x.png in Resources */,
 				588886A822EADE1500F28A50 /* PHP5中文手册.pdf in Resources */,
 				BBDB8E6123019AD700A37DF8 /* xinwen.png in Resources */,
 				5888868422EAC9E200F28A50 /* Reader-Mark-Y.png in Resources */,
@@ -895,10 +922,12 @@
 				5888868822EAC9E200F28A50 /* Reader-Mark-N@3x.png in Resources */,
 				5888867822EAC9E200F28A50 /* Reader-Button-H.png in Resources */,
 				5888867522EAC9E200F28A50 /* Reader-Email@3x.png in Resources */,
+				BBF7CA95231966F900C60177 /* guanyuwomen@2x.png in Resources */,
 				BB845C9322F482AE007238EA /* SVProgressHUD.bundle in Resources */,
 				5888869F22EADE1500F28A50 /* Clang、Infer 和 OCLint ，我们应该使用谁来做静态分析？.pdf in Resources */,
 				588886A322EADE1500F28A50 /* Auto Layout 是怎么进行自动布局的，性能如何？.pdf in Resources */,
 				5888868022EAC9E200F28A50 /* Reader-Email.png in Resources */,
+				BBF7CA99231966F900C60177 /* shudan@2x.png in Resources */,
 				588886A422EADE1500F28A50 /* 项目大了人员多了，架构怎么设计更合理？.pdf in Resources */,
 				BB1E6ED42307AAF900398994 /* NewsTableViewCell.xib in Resources */,
 				5888867022EAC9E200F28A50 /* Reader-Email@2x.png in Resources */,
@@ -912,12 +941,14 @@
 				5888867D22EAC9E200F28A50 /* Reader-Print@2x.png in Resources */,
 				5888868622EAC9E200F28A50 /* AppIcon-152.png in Resources */,
 				5888867922EAC9E200F28A50 /* AppIcon-076.png in Resources */,
+				BBF7CA96231966F900C60177 /* shoucang@2x.png in Resources */,
 				588886A622EADE1500F28A50 /* 无侵入的埋点方案如何实现.pdf in Resources */,
 				588886A522EADE1500F28A50 /* 链接器：符号是怎么绑定到地址上的？.pdf in Resources */,
 				5888867E22EAC9E200F28A50 /* Reader-Thumbs.png in Resources */,
 				BBE8170822F45B0500B64617 /* nodatas.jpeg in Resources */,
 				5888867622EAC9E200F28A50 /* Reader-Mark-Y@2x.png in Resources */,
 				588886A222EADE1500F28A50 /* 如何利用 Clang 为 App 提质？.pdf in Resources */,
+				BBF7CA94231966F900C60177 /* dengji@2x.png in Resources */,
 				58BA5F7422EFEAD9003205F0 /* 010.png in Resources */,
 				5888867722EAC9E200F28A50 /* Reader-Button-H@3x.png in Resources */,
 				5888867222EAC9E200F28A50 /* Reader-Button-N@3x.png in Resources */,
@@ -928,6 +959,7 @@
 				5888867B22EAC9E200F28A50 /* Reader-Button-H@2x.png in Resources */,
 				58BA5F7922EFEAD9003205F0 /* 009.png in Resources */,
 				58BA5F6E22EFEAD9003205F0 /* 011.png in Resources */,
+				BBF7CA97231966F900C60177 /* guanzhu@2x.png in Resources */,
 				58BA5F7122EFEAD9003205F0 /* 012.png in Resources */,
 				588886A722EADE1500F28A50 /* 人月神话20周年中文版.pdf in Resources */,
 				5888868322EAC9E200F28A50 /* AppIcon-120.png in Resources */,

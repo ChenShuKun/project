@@ -12,11 +12,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailModel : NSObject
 
-@property (nonatomic,copy) NSString *header_name;
-@property (nonatomic,copy) NSString *header_type;
+@property (nonatomic,copy) NSData *data;
+@property (nonatomic,copy) CBUUID *uuid;
+
 @property (nonatomic ,strong) NSMutableArray *dataArray;
- 
+
+@end
+
+
+@interface DetailModel22 : NSObject
+
+@property (nonatomic,copy) NSData *data22;
+@property (nonatomic,copy) CBUUID *uuid22;
 
 @end
 
 NS_ASSUME_NONNULL_END
+

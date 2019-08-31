@@ -40,7 +40,7 @@
                     <navigationItem key="navigationItem" title=" 书籍 " id="vfG-ji-8Nw">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="wL5-zm-MfF">
                             <connections>
-                                <segue destination="bfC-w6-dkI" kind="push" id="fbY-mR-Pqm"/>
+                                <action selector="searchBooksActions:" destination="VXw-DX-4r3" id="Vua-yQ-6WE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -61,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ynY-lZ-OJL">
-                                <rect key="frame" x="0.0" y="113" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bfC-w6-dkI" id="Ziy-3n-CZW"/>
@@ -69,7 +69,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="搜索相关内容" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TLR-H5-JS2">
-                                <rect key="frame" x="0.0" y="64" width="295" height="49"/>
+                                <rect key="frame" x="0.0" y="20" width="295" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="rSd-Oh-mfG"/>
                                 </constraints>
@@ -78,7 +78,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0u-aV-iG2">
-                                <rect key="frame" x="295" y="64" width="80" height="49"/>
+                                <rect key="frame" x="295" y="20" width="80" height="49"/>
                                 <state key="normal" title="搜索"/>
                                 <connections>
                                     <action selector="searchBtnActions:" destination="bfC-w6-dkI" eventType="touchUpInside" id="fjg-Gw-SXB"/>

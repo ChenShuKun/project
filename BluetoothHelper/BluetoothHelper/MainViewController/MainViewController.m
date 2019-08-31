@@ -63,6 +63,8 @@
 }
 
 - (void)stopstopScan111 {
+    
+    NSLog(@"+++++++++");
     // 扫描到设备之后停止扫描
     if (self.manager.isScanning) {
         [_manager stopScan];
@@ -106,7 +108,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Model *mode =  self.dataArray[indexPath.row];
-    
+    mode.manager = self.manager;
     [self goToDetailWithModel:mode];
 }
 
@@ -159,7 +161,8 @@
         [self.dataArray addObject:models];
     }
     
-    [self stopstopScan111];
+    [self.tableView reloadData];
+    
 //    _peripheral = peripheral;
 //    [_manager connectPeripheral:_peripheral options:nil];
 //

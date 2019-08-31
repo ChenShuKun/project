@@ -18,3 +18,11 @@
 }
 
 @end
+
+@implementation DetailModel22
+
+
+@end
+
+
+

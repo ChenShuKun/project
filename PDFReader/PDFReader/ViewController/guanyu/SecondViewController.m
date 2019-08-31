@@ -96,10 +96,22 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID ];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        
+        
     }
     
     NSDictionary *dict =  self.dataArray[indexPath.row];
+
+    cell.imageView.image = [UIImage imageNamed:dict[@"icon"]];
+    //调整cell.imageView大小
+    CGSize itemSize = CGSizeMake(24, 24);//希望显示的大小
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+    CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+    [cell.imageView.image drawInRect:imageRect];
+    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
     cell.textLabel.text = dict[@"name"];
     return cell;
 }
@@ -172,12 +184,12 @@
 
 
 - (NSArray *)getDatas {
-    return @[ @{@"name":@"等级",@"icon":@"",@"id":@"levelViewConroller"},
-              @{@"name":@"书单",@"icon":@"",@"id":@"bookViewConroller"},
-              @{@"name":@"关注作者",@"icon":@"",@"id":@"AttentionAuther"},
-              @{@"name":@"关注",@"icon":@"",@"id":@"attentionViewConroller"},
-              @{@"name":@"收藏",@"icon":@"",@"id":@"collectViewConroller"},
-              @{@"name":@"关于",@"icon":@"",@"id":@"aboutViewController"},
+    return @[ @{@"name":@"等级",@"icon":@"dengji.png",@"id":@"levelViewConroller"},
+              @{@"name":@"书单",@"icon":@"shudan.png",@"id":@"bookViewConroller"},
+              @{@"name":@"关注作者",@"icon":@"guanzhu_zuozhe.png",@"id":@"AttentionAuther"},
+              @{@"name":@"关注",@"icon":@"guanzhu.png",@"id":@"attentionViewConroller"},
+              @{@"name":@"收藏",@"icon":@"shoucang.png",@"id":@"collectViewConroller"},
+              @{@"name":@"关于",@"icon":@"guanyuwomen.png",@"id":@"aboutViewController"},
                ];
 }
 

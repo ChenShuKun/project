@@ -14,10 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic ,copy) NSDictionary *dict;
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
-@property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *careCountLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
