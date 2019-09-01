@@ -108,8 +108,9 @@
         return;
     }
     
-    SearchViewController *search = [[SearchViewController alloc]init];
-    [self.navigationController pushViewController:search animated:YES];
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"searchViewController111"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ipi-Q8-DmM">
-                        <rect key="frame" x="16" y="10" width="90" height="90"/>
+                        <rect key="frame" x="16" y="10" width="137" height="90"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="90" id="Fdh-Av-YKx"/>
+                            <constraint firstAttribute="width" constant="137" id="Fdh-Av-YKx"/>
                             <constraint firstAttribute="height" constant="90" id="Wcp-SL-Gnz"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpt-Ga-gZ1">
-                        <rect key="frame" x="121" y="78.5" width="195" height="21"/>
+                        <rect key="frame" x="168" y="78.5" width="148" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="u6o-zh-ceK"/>
                         </constraints>
@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vhn-6C-Qdq">
-                        <rect key="frame" x="121" y="10" width="195" height="58.5"/>
+                        <rect key="frame" x="168" y="10" width="148" height="58.5"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

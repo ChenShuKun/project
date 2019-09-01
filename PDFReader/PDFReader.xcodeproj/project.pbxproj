@@ -112,6 +112,7 @@
 		BBAE8CC8230ED47900AE35D6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CC0230ED47900AE35D6 /* FirstViewController.m */; };
 		BBAE8CCB230ED71300AE35D6 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CCA230ED71300AE35D6 /* AttentionViewController.m */; };
 		BBAE8CCF230EDB4200AE35D6 /* AttentionAutherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CCE230EDB4200AE35D6 /* AttentionAutherViewController.m */; };
+		BBDB06D0231BECFB00D59722 /* tuichu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB06CF231BECFB00D59722 /* tuichu@2x.png */; };
 		BBDB8E5F230194D900A37DF8 /* AFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDB8E5E230194D900A37DF8 /* AFNetworkingManager.m */; };
 		BBDB8E6123019AD700A37DF8 /* xinwen.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB8E6023019AD700A37DF8 /* xinwen.png */; };
 		BBE816F422F430C800B64617 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE816F322F430C800B64617 /* TableHeaderView.m */; };
@@ -324,6 +325,7 @@
 		BBAE8CCA230ED71300AE35D6 /* AttentionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		BBAE8CCD230EDB4200AE35D6 /* AttentionAutherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttentionAutherViewController.h; sourceTree = "<group>"; };
 		BBAE8CCE230EDB4200AE35D6 /* AttentionAutherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttentionAutherViewController.m; sourceTree = "<group>"; };
+		BBDB06CF231BECFB00D59722 /* tuichu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuichu@2x.png"; sourceTree = "<group>"; };
 		BBDB8E5D230194D900A37DF8 /* AFNetworkingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkingManager.h; sourceTree = "<group>"; };
 		BBDB8E5E230194D900A37DF8 /* AFNetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingManager.m; sourceTree = "<group>"; };
 		BBDB8E6023019AD700A37DF8 /* xinwen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xinwen.png; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 		BBF7CA8D231966F900C60177 /* 关于 */ = {
 			isa = PBXGroup;
 			children = (
+				BBDB06CF231BECFB00D59722 /* tuichu@2x.png */,
 				BBF7CA8E231966F900C60177 /* dengji@2x.png */,
 				BBF7CA8F231966F900C60177 /* guanyuwomen@2x.png */,
 				BBF7CA90231966F900C60177 /* shoucang@2x.png */,
@@ -904,6 +907,7 @@
 				5888868522EAC9E200F28A50 /* Reader-Mark-N.png in Resources */,
 				5888867C22EAC9E200F28A50 /* Reader-Mark-Y@3x.png in Resources */,
 				5895305C22F42C5D0082E958 /* shuji@2x.png in Resources */,
+				BBDB06D0231BECFB00D59722 /* tuichu@2x.png in Resources */,
 				58BA5F7722EFEAD9003205F0 /* 001.png in Resources */,
 				58BA5F7022EFEAD9003205F0 /* 007.png in Resources */,
 				BB845C8222F48006007238EA /* books.jpg in Resources */,
@@ -1241,7 +1245,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66RS37LLGX;
 				GCC_PREFIX_HEADER = PDFReader/PrefixHeader.pch;
 				INFOPLIST_FILE = PDFReader/Info.plist;
@@ -1252,7 +1256,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.iosPDFReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = chenshukun_Development;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1262,8 +1266,8 @@
 			baseConfigurationReference = 1254DD062F79EE3E8BCE0CAE /* Pods-PDFReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66RS37LLGX;
 				GCC_PREFIX_HEADER = PDFReader/PrefixHeader.pch;
 				INFOPLIST_FILE = PDFReader/Info.plist;
@@ -1274,7 +1278,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.iosPDFReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = iospdfReader_dis;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

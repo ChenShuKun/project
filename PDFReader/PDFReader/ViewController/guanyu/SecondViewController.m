@@ -57,7 +57,7 @@
 
 - (void)loginSucceed {
   
-    NSDictionary *dict = @{@"name":@"退出",@"icon":@"",@"id":@"exit"};
+    NSDictionary *dict = @{@"name":@"退出",@"icon":@"tuichu.png",@"id":@"exit"};
     if (![self.dataArray containsObject:dict]) {
         [self.dataArray addObject:dict];
         [self reloadTableView];

@@ -55,7 +55,7 @@
         <!--搜索-->
         <scene sceneID="MwT-lK-PEx">
             <objects>
-                <viewController title="搜索" hidesBottomBarWhenPushed="YES" id="bfC-w6-dkI" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchViewController111" title="搜索" hidesBottomBarWhenPushed="YES" id="bfC-w6-dkI" customClass="SearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fh8-G2-A4G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,13 +287,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="等级" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4T-JF-MdM">
-                                <rect key="frame" x="83" y="131" width="209" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nodatas.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="A0S-BW-o2F">
                                 <rect key="frame" x="67.5" y="120" width="240" height="240"/>
                                 <constraints>
@@ -537,8 +530,8 @@
                                 <color key="textColor" red="0.96078431369999995" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    此版本适用于iOS10.0版本以及以上操作系统的额 iPhone 和 iPad,对于在使用其他操作系统的手机或者平板上使用本软件,出现的任何问题, 本 APP不承担任何责任" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de7-Pi-fBD">
-                                <rect key="frame" x="20" y="351" width="335" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    此版本适用于iOS10.0版本以及以上操作系统的 iPhone ,对于在使用其他操作系统的手机使用本软件,出现的任何问题, 本 APP不承担任何责任" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de7-Pi-fBD">
+                                <rect key="frame" x="20" y="381" width="335" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="2zb-Fw-j7T"/>
                                 </constraints>
@@ -549,7 +542,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="de7-Pi-fBD" firstAttribute="top" secondItem="xMk-Hu-wWa" secondAttribute="bottom" constant="20" id="0Zs-R2-nYa"/>
+                            <constraint firstItem="de7-Pi-fBD" firstAttribute="top" secondItem="xMk-Hu-wWa" secondAttribute="bottom" constant="50" id="0Zs-R2-nYa"/>
                             <constraint firstItem="de7-Pi-fBD" firstAttribute="leading" secondItem="3L9-tl-LIb" secondAttribute="leading" constant="20" id="8Uq-dR-bKM"/>
                             <constraint firstItem="kDO-7p-bOC" firstAttribute="centerX" secondItem="6lr-hn-UGr" secondAttribute="centerX" id="IhY-qn-Tdh"/>
                             <constraint firstItem="kDO-7p-bOC" firstAttribute="top" secondItem="3L9-tl-LIb" secondAttribute="top" constant="60" id="P1x-1n-BHC"/>
@@ -593,11 +586,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="书籍" id="jsR-lS-Zer"/>
                     <navigationItem key="navigationItem" title="关于" id="F1q-VW-nZE">
-                        <barButtonItem key="rightBarButtonItem" title="签到" id="VUj-hG-O9I">
-                            <connections>
-                                <segue destination="geP-w6-zJ6" kind="push" id="TCd-4T-aM4"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" id="VUj-hG-O9I"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="1tG-KE-5ah" id="y62-Ca-MD8"/>

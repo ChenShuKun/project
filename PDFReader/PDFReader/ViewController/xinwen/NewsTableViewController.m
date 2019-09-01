@@ -48,11 +48,12 @@
 - (void)getDatasWithParams:(NSInteger)page  {
     
     [SVProgressHUD show];
-    NSDictionary *params = @{@"page":@(page),@"rows":@"10"};
+    NSDictionary *params = @{@"page":@(page),@"rows":@"7"};
     [AFNetworkingManager requestGetUrlString:@"news/getNews" parameters:params successBlock:^(id  _Nonnull responseObject) {
         
         [SVProgressHUD dismiss];
         NSArray *data = responseObject[@"data"];
+        self.totalRow = [responseObject[@"totalRow"] integerValue];
         if (data) {
             [self.dataArray addObjectsFromArray:data];
         }
