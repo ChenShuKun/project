@@ -112,6 +112,15 @@
 		BBAE8CC8230ED47900AE35D6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CC0230ED47900AE35D6 /* FirstViewController.m */; };
 		BBAE8CCB230ED71300AE35D6 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CCA230ED71300AE35D6 /* AttentionViewController.m */; };
 		BBAE8CCF230EDB4200AE35D6 /* AttentionAutherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CCE230EDB4200AE35D6 /* AttentionAutherViewController.m */; };
+		BBD9A1EE231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1ED231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf */; };
+		BBD9A1F0231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1EF231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf */; };
+		BBD9A1F2231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F1231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf */; };
+		BBD9A1F4231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F3231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf */; };
+		BBD9A1F6231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F5231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf */; };
+		BBD9A1F8231BF1EC0078ACF3 /* 第一讲开篇词.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F7231BF1EC0078ACF3 /* 第一讲开篇词.pdf */; };
+		BBD9A1FA231BF2130078ACF3 /* 苹果编码规范.PDF in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F9231BF2130078ACF3 /* 苹果编码规范.PDF */; };
+		BBD9A1FC231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1FB231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf */; };
+		BBD9A1FE231BF2520078ACF3 /* IOS开发总结.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1FD231BF2520078ACF3 /* IOS开发总结.pdf */; };
 		BBDB06D0231BECFB00D59722 /* tuichu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB06CF231BECFB00D59722 /* tuichu@2x.png */; };
 		BBDB8E5F230194D900A37DF8 /* AFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDB8E5E230194D900A37DF8 /* AFNetworkingManager.m */; };
 		BBDB8E6123019AD700A37DF8 /* xinwen.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB8E6023019AD700A37DF8 /* xinwen.png */; };
@@ -325,6 +334,15 @@
 		BBAE8CCA230ED71300AE35D6 /* AttentionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		BBAE8CCD230EDB4200AE35D6 /* AttentionAutherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttentionAutherViewController.h; sourceTree = "<group>"; };
 		BBAE8CCE230EDB4200AE35D6 /* AttentionAutherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttentionAutherViewController.m; sourceTree = "<group>"; };
+		BBD9A1ED231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf"; sourceTree = "<group>"; };
+		BBD9A1EF231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf"; sourceTree = "<group>"; };
+		BBD9A1F1231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf"; sourceTree = "<group>"; };
+		BBD9A1F3231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf"; sourceTree = "<group>"; };
+		BBD9A1F5231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "本地和推送通知编程指南.pdf"; sourceTree = "<group>"; };
+		BBD9A1F7231BF1EC0078ACF3 /* 第一讲开篇词.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "第一讲开篇词.pdf"; sourceTree = "<group>"; };
+		BBD9A1F9231BF2130078ACF3 /* 苹果编码规范.PDF */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "苹果编码规范.PDF"; sourceTree = "<group>"; };
+		BBD9A1FB231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iPhone应用用户体验设计实践与案例.pdf"; sourceTree = "<group>"; };
+		BBD9A1FD231BF2520078ACF3 /* IOS开发总结.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "IOS开发总结.pdf"; sourceTree = "<group>"; };
 		BBDB06CF231BECFB00D59722 /* tuichu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuichu@2x.png"; sourceTree = "<group>"; };
 		BBDB8E5D230194D900A37DF8 /* AFNetworkingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkingManager.h; sourceTree = "<group>"; };
 		BBDB8E5E230194D900A37DF8 /* AFNetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingManager.m; sourceTree = "<group>"; };
@@ -497,6 +515,15 @@
 		5888865722EAC9E200F28A50 /* PdfSources */ = {
 			isa = PBXGroup;
 			children = (
+				BBD9A1FD231BF2520078ACF3 /* IOS开发总结.pdf */,
+				BBD9A1FB231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf */,
+				BBD9A1F9231BF2130078ACF3 /* 苹果编码规范.PDF */,
+				BBD9A1F7231BF1EC0078ACF3 /* 第一讲开篇词.pdf */,
+				BBD9A1F5231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf */,
+				BBD9A1F3231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf */,
+				BBD9A1F1231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf */,
+				BBD9A1EF231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf */,
+				BBD9A1ED231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf */,
 				5888869622EADE1400F28A50 /* 建立你自己的iOS开发知识体系.pdf */,
 				5888869522EADE1400F28A50 /* App 启动速度怎么做优化与监控？.pdf */,
 				5888869822EADE1400F28A50 /* Auto Layout 是怎么进行自动布局的，性能如何？.pdf */,
@@ -896,6 +923,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE8171222F4687800B64617 /* no_head.jpeg in Resources */,
+				BBD9A1F0231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf in Resources */,
 				588886A922EADE1500F28A50 /* App 如何通过注入动态库的方式实现极速编译调试.pdf in Resources */,
 				BBE8171122F4687800B64617 /* head.jpg in Resources */,
 				5888867322EAC9E200F28A50 /* Reader-Print.png in Resources */,
@@ -907,6 +935,7 @@
 				5888868522EAC9E200F28A50 /* Reader-Mark-N.png in Resources */,
 				5888867C22EAC9E200F28A50 /* Reader-Mark-Y@3x.png in Resources */,
 				5895305C22F42C5D0082E958 /* shuji@2x.png in Resources */,
+				BBD9A1F2231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf in Resources */,
 				BBDB06D0231BECFB00D59722 /* tuichu@2x.png in Resources */,
 				58BA5F7722EFEAD9003205F0 /* 001.png in Resources */,
 				58BA5F7022EFEAD9003205F0 /* 007.png in Resources */,
@@ -916,6 +945,7 @@
 				5888868222EAC9E200F28A50 /* Reader-Print@3x.png in Resources */,
 				58BA5F7522EFEAD9003205F0 /* 003.png in Resources */,
 				58BA5F7622EFEAD9003205F0 /* 002.png in Resources */,
+				BBD9A1FE231BF2520078ACF3 /* IOS开发总结.pdf in Resources */,
 				58BA5F7822EFEAD9003205F0 /* 004.png in Resources */,
 				BBF7CA98231966F900C60177 /* guanzhu_zuozhe@2x.png in Resources */,
 				588886A822EADE1500F28A50 /* PHP5中文手册.pdf in Resources */,
@@ -924,6 +954,7 @@
 				58BA5F7322EFEAD9003205F0 /* 005.png in Resources */,
 				5888867F22EAC9E200F28A50 /* Reader-Thumbs@2x.png in Resources */,
 				5888868822EAC9E200F28A50 /* Reader-Mark-N@3x.png in Resources */,
+				BBD9A1FC231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf in Resources */,
 				5888867822EAC9E200F28A50 /* Reader-Button-H.png in Resources */,
 				5888867522EAC9E200F28A50 /* Reader-Email@3x.png in Resources */,
 				BBF7CA95231966F900C60177 /* guanyuwomen@2x.png in Resources */,
@@ -932,9 +963,11 @@
 				588886A322EADE1500F28A50 /* Auto Layout 是怎么进行自动布局的，性能如何？.pdf in Resources */,
 				5888868022EAC9E200F28A50 /* Reader-Email.png in Resources */,
 				BBF7CA99231966F900C60177 /* shudan@2x.png in Resources */,
+				BBD9A1FA231BF2130078ACF3 /* 苹果编码规范.PDF in Resources */,
 				588886A422EADE1500F28A50 /* 项目大了人员多了，架构怎么设计更合理？.pdf in Resources */,
 				BB1E6ED42307AAF900398994 /* NewsTableViewCell.xib in Resources */,
 				5888867022EAC9E200F28A50 /* Reader-Email@2x.png in Resources */,
+				BBD9A1F8231BF1EC0078ACF3 /* 第一讲开篇词.pdf in Resources */,
 				588886A122EADE1500F28A50 /* 建立你自己的iOS开发知识体系.pdf in Resources */,
 				588886A022EADE1500F28A50 /* App 启动速度怎么做优化与监控？.pdf in Resources */,
 				5888868B22EAC9E200F28A50 /* Reader-Export@2x.png in Resources */,
@@ -944,6 +977,7 @@
 				5895305E22F42D9A0082E958 /* ziyuan@2x.png in Resources */,
 				5888867D22EAC9E200F28A50 /* Reader-Print@2x.png in Resources */,
 				5888868622EAC9E200F28A50 /* AppIcon-152.png in Resources */,
+				BBD9A1F4231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf in Resources */,
 				5888867922EAC9E200F28A50 /* AppIcon-076.png in Resources */,
 				BBF7CA96231966F900C60177 /* shoucang@2x.png in Resources */,
 				588886A622EADE1500F28A50 /* 无侵入的埋点方案如何实现.pdf in Resources */,
@@ -952,6 +986,8 @@
 				BBE8170822F45B0500B64617 /* nodatas.jpeg in Resources */,
 				5888867622EAC9E200F28A50 /* Reader-Mark-Y@2x.png in Resources */,
 				588886A222EADE1500F28A50 /* 如何利用 Clang 为 App 提质？.pdf in Resources */,
+				BBD9A1F6231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf in Resources */,
+				BBD9A1EE231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf in Resources */,
 				BBF7CA94231966F900C60177 /* dengji@2x.png in Resources */,
 				58BA5F7422EFEAD9003205F0 /* 010.png in Resources */,
 				5888867722EAC9E200F28A50 /* Reader-Button-H@3x.png in Resources */,
