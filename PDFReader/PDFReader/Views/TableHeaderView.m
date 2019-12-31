@@ -86,9 +86,8 @@
  @"des":@"我是一个爱好的阅读者,阅读让我开心,阅读让我充实,阅读让我的生活丰富,阅读让我增长知识,阅读是我的美好习惯,加油!!!"
  }
  */
-    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
-    BOOL hasLogIn =  [[SKPDFReader sharedSingleton] hasSaveUserName:name];
-    if (hasLogIn) {
+    NSString *name = @"244410894@qq.com";
+    if ([UserDefault isLogIn]) {
         NSLog(@"-----已经登录 ");
         NSDictionary *dic = [[SKPDFReader sharedSingleton] getInforData:name];
         self.imagess.image = [UIImage imageNamed:dic[@"head"]];
@@ -101,7 +100,7 @@
         
         NSLog(@"-----没登录 ");
         self.imagess.image = [UIImage imageNamed:@"no_head.jpeg"];
-        self.nameLabel.text = @"未登录";
+        self.nameLabel.text = @"游客AA03";
         self.desLabel.text = @"暂无描述";
         self.contentLabel.hidden = YES;
     }

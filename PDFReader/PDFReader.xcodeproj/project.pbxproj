@@ -46,8 +46,6 @@
 		5888868B22EAC9E200F28A50 /* Reader-Export@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5888865522EAC9E100F28A50 /* Reader-Export@2x.png */; };
 		5888868C22EAC9E200F28A50 /* AppIcon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 5888865622EAC9E100F28A50 /* AppIcon-180.png */; };
 		5888868D22EAC9E200F28A50 /* Reader.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5888865822EAC9E200F28A50 /* Reader.pdf */; };
-		5888869022EAD78600F28A50 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5888868F22EAD78600F28A50 /* FirstViewController.m */; };
-		5888869322EAD79100F28A50 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5888869222EAD79100F28A50 /* SecondViewController.m */; };
 		5888869F22EADE1500F28A50 /* Clang、Infer 和 OCLint ，我们应该使用谁来做静态分析？.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5888869422EADE1400F28A50 /* Clang、Infer 和 OCLint ，我们应该使用谁来做静态分析？.pdf */; };
 		588886A022EADE1500F28A50 /* App 启动速度怎么做优化与监控？.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5888869522EADE1400F28A50 /* App 启动速度怎么做优化与监控？.pdf */; };
 		588886A122EADE1500F28A50 /* 建立你自己的iOS开发知识体系.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5888869622EADE1400F28A50 /* 建立你自己的iOS开发知识体系.pdf */; };
@@ -94,20 +92,49 @@
 		58DA88F222EED55F0057AD6B /* ThumbsMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA88DE22EED55F0057AD6B /* ThumbsMainToolbar.m */; };
 		58DA88F322EED55F0057AD6B /* ReaderMainPagebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA88DF22EED55F0057AD6B /* ReaderMainPagebar.m */; };
 		A392F8F3ED36BB602DC69679 /* libPods-PDFReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D523952BC84A2C969E95EA5B /* libPods-PDFReader.a */; };
+		BB1E6EC92304330300398994 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6EC82304330300398994 /* WebViewController.m */; };
+		BB1E6ED32307AAF900398994 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6ED12307AAF900398994 /* NewsTableViewCell.m */; };
+		BB1E6ED42307AAF900398994 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1E6ED22307AAF900398994 /* NewsTableViewCell.xib */; };
 		BB845C8222F48006007238EA /* books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB845C8122F48006007238EA /* books.jpg */; };
 		BB845C8F22F482AE007238EA /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB845C8522F482AE007238EA /* SVRadialGradientLayer.m */; };
 		BB845C9022F482AE007238EA /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB845C8822F482AE007238EA /* SVProgressAnimatedView.m */; };
 		BB845C9122F482AE007238EA /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BB845C8B22F482AE007238EA /* SVProgressHUD.m */; };
 		BB845C9222F482AE007238EA /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB845C8C22F482AE007238EA /* SVIndefiniteAnimatedView.m */; };
 		BB845C9322F482AE007238EA /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BB845C8D22F482AE007238EA /* SVProgressHUD.bundle */; };
+		BBAE8CAA230D708B00AE35D6 /* UserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CA9230D708B00AE35D6 /* UserDefault.m */; };
+		BBAE8CC1230ED47900AE35D6 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CAC230ED47800AE35D6 /* BookViewController.m */; };
+		BBAE8CC2230ED47900AE35D6 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CB0230ED47900AE35D6 /* SearchViewController.m */; };
+		BBAE8CC3230ED47900AE35D6 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CB1230ED47900AE35D6 /* NewsTableViewController.m */; };
+		BBAE8CC4230ED47900AE35D6 /* CollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CB5230ED47900AE35D6 /* CollectViewController.m */; };
+		BBAE8CC5230ED47900AE35D6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CB8230ED47900AE35D6 /* LoginViewController.m */; };
+		BBAE8CC6230ED47900AE35D6 /* InforViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CB9230ED47900AE35D6 /* InforViewController.m */; };
+		BBAE8CC7230ED47900AE35D6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CBC230ED47900AE35D6 /* SecondViewController.m */; };
+		BBAE8CC8230ED47900AE35D6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CC0230ED47900AE35D6 /* FirstViewController.m */; };
+		BBAE8CCB230ED71300AE35D6 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CCA230ED71300AE35D6 /* AttentionViewController.m */; };
+		BBAE8CCF230EDB4200AE35D6 /* AttentionAutherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE8CCE230EDB4200AE35D6 /* AttentionAutherViewController.m */; };
+		BBD9A1EE231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1ED231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf */; };
+		BBD9A1F0231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1EF231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf */; };
+		BBD9A1F2231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F1231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf */; };
+		BBD9A1F4231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F3231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf */; };
+		BBD9A1F6231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F5231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf */; };
+		BBD9A1F8231BF1EC0078ACF3 /* 第一讲开篇词.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F7231BF1EC0078ACF3 /* 第一讲开篇词.pdf */; };
+		BBD9A1FA231BF2130078ACF3 /* 苹果编码规范.PDF in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1F9231BF2130078ACF3 /* 苹果编码规范.PDF */; };
+		BBD9A1FC231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1FB231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf */; };
+		BBD9A1FE231BF2520078ACF3 /* IOS开发总结.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBD9A1FD231BF2520078ACF3 /* IOS开发总结.pdf */; };
+		BBDB06D0231BECFB00D59722 /* tuichu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB06CF231BECFB00D59722 /* tuichu@2x.png */; };
+		BBDB8E5F230194D900A37DF8 /* AFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDB8E5E230194D900A37DF8 /* AFNetworkingManager.m */; };
+		BBDB8E6123019AD700A37DF8 /* xinwen.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB8E6023019AD700A37DF8 /* xinwen.png */; };
 		BBE816F422F430C800B64617 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE816F322F430C800B64617 /* TableHeaderView.m */; };
 		BBE8170822F45B0500B64617 /* nodatas.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BBE8170722F45B0300B64617 /* nodatas.jpeg */; };
 		BBE8170B22F460C300B64617 /* SKPDFReader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8170A22F460C300B64617 /* SKPDFReader.m */; };
-		BBE8170E22F463E900B64617 /* CollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8170D22F463E900B64617 /* CollectViewController.m */; };
 		BBE8171122F4687800B64617 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBE8170F22F4687800B64617 /* head.jpg */; };
 		BBE8171222F4687800B64617 /* no_head.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BBE8171022F4687800B64617 /* no_head.jpeg */; };
-		BBE8171522F4708C00B64617 /* InforViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8171422F4708C00B64617 /* InforViewController.m */; };
-		BBE8171822F47D7200B64617 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8171722F47D7200B64617 /* LoginViewController.m */; };
+		BBF7CA94231966F900C60177 /* dengji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA8E231966F900C60177 /* dengji@2x.png */; };
+		BBF7CA95231966F900C60177 /* guanyuwomen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA8F231966F900C60177 /* guanyuwomen@2x.png */; };
+		BBF7CA96231966F900C60177 /* shoucang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA90231966F900C60177 /* shoucang@2x.png */; };
+		BBF7CA97231966F900C60177 /* guanzhu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA91231966F900C60177 /* guanzhu@2x.png */; };
+		BBF7CA98231966F900C60177 /* guanzhu_zuozhe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA92231966F900C60177 /* guanzhu_zuozhe@2x.png */; };
+		BBF7CA99231966F900C60177 /* shudan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7CA93231966F900C60177 /* shudan@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,10 +203,6 @@
 		5888865522EAC9E100F28A50 /* Reader-Export@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Export@2x.png"; sourceTree = "<group>"; };
 		5888865622EAC9E100F28A50 /* AppIcon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-180.png"; sourceTree = "<group>"; };
 		5888865822EAC9E200F28A50 /* Reader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Reader.pdf; sourceTree = "<group>"; };
-		5888868E22EAD78600F28A50 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		5888868F22EAD78600F28A50 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		5888869122EAD79100F28A50 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		5888869222EAD79100F28A50 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		5888869422EADE1400F28A50 /* Clang、Infer 和 OCLint ，我们应该使用谁来做静态分析？.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Clang、Infer 和 OCLint ，我们应该使用谁来做静态分析？.pdf"; sourceTree = "<group>"; };
 		5888869522EADE1400F28A50 /* App 启动速度怎么做优化与监控？.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "App 启动速度怎么做优化与监控？.pdf"; sourceTree = "<group>"; };
 		5888869622EADE1400F28A50 /* 建立你自己的iOS开发知识体系.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "建立你自己的iOS开发知识体系.pdf"; sourceTree = "<group>"; };
@@ -247,6 +270,11 @@
 		58DA88DE22EED55F0057AD6B /* ThumbsMainToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbsMainToolbar.m; sourceTree = "<group>"; };
 		58DA88DF22EED55F0057AD6B /* ReaderMainPagebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderMainPagebar.m; sourceTree = "<group>"; };
 		71C6070E0CBBB65F4A6E0015 /* Pods-PDFReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFReader/Pods-PDFReader.debug.xcconfig"; sourceTree = "<group>"; };
+		BB1E6EC72304330300398994 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		BB1E6EC82304330300398994 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		BB1E6ED02307AAF900398994 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		BB1E6ED12307AAF900398994 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		BB1E6ED22307AAF900398994 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		BB845C8122F48006007238EA /* books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = books.jpg; sourceTree = "<group>"; };
 		BB845C8522F482AE007238EA /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		BB845C8622F482AE007238EA /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -284,19 +312,54 @@
 		BB845CAD22F489C8007238EA /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		BB845CAE22F489C8007238EA /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
 		BB845CAF22F489C8007238EA /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		BBAE8CA8230D708B00AE35D6 /* UserDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefault.h; sourceTree = "<group>"; };
+		BBAE8CA9230D708B00AE35D6 /* UserDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefault.m; sourceTree = "<group>"; };
+		BBAE8CAC230ED47800AE35D6 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		BBAE8CAD230ED47800AE35D6 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		BBAE8CAF230ED47900AE35D6 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
+		BBAE8CB0230ED47900AE35D6 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		BBAE8CB1230ED47900AE35D6 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		BBAE8CB2230ED47900AE35D6 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		BBAE8CB4230ED47900AE35D6 /* CollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectViewController.h; sourceTree = "<group>"; };
+		BBAE8CB5230ED47900AE35D6 /* CollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectViewController.m; sourceTree = "<group>"; };
+		BBAE8CB7230ED47900AE35D6 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		BBAE8CB8230ED47900AE35D6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BBAE8CB9230ED47900AE35D6 /* InforViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InforViewController.m; sourceTree = "<group>"; };
+		BBAE8CBA230ED47900AE35D6 /* InforViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InforViewController.h; sourceTree = "<group>"; };
+		BBAE8CBB230ED47900AE35D6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		BBAE8CBC230ED47900AE35D6 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		BBAE8CBF230ED47900AE35D6 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		BBAE8CC0230ED47900AE35D6 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		BBAE8CC9230ED71300AE35D6 /* AttentionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttentionViewController.h; sourceTree = "<group>"; };
+		BBAE8CCA230ED71300AE35D6 /* AttentionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
+		BBAE8CCD230EDB4200AE35D6 /* AttentionAutherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttentionAutherViewController.h; sourceTree = "<group>"; };
+		BBAE8CCE230EDB4200AE35D6 /* AttentionAutherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttentionAutherViewController.m; sourceTree = "<group>"; };
+		BBD9A1ED231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf"; sourceTree = "<group>"; };
+		BBD9A1EF231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf"; sourceTree = "<group>"; };
+		BBD9A1F1231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf"; sourceTree = "<group>"; };
+		BBD9A1F3231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf"; sourceTree = "<group>"; };
+		BBD9A1F5231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "本地和推送通知编程指南.pdf"; sourceTree = "<group>"; };
+		BBD9A1F7231BF1EC0078ACF3 /* 第一讲开篇词.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "第一讲开篇词.pdf"; sourceTree = "<group>"; };
+		BBD9A1F9231BF2130078ACF3 /* 苹果编码规范.PDF */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "苹果编码规范.PDF"; sourceTree = "<group>"; };
+		BBD9A1FB231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iPhone应用用户体验设计实践与案例.pdf"; sourceTree = "<group>"; };
+		BBD9A1FD231BF2520078ACF3 /* IOS开发总结.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "IOS开发总结.pdf"; sourceTree = "<group>"; };
+		BBDB06CF231BECFB00D59722 /* tuichu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuichu@2x.png"; sourceTree = "<group>"; };
+		BBDB8E5D230194D900A37DF8 /* AFNetworkingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkingManager.h; sourceTree = "<group>"; };
+		BBDB8E5E230194D900A37DF8 /* AFNetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingManager.m; sourceTree = "<group>"; };
+		BBDB8E6023019AD700A37DF8 /* xinwen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xinwen.png; sourceTree = "<group>"; };
 		BBE816F222F430C800B64617 /* TableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableHeaderView.h; sourceTree = "<group>"; };
 		BBE816F322F430C800B64617 /* TableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableHeaderView.m; sourceTree = "<group>"; };
 		BBE8170722F45B0300B64617 /* nodatas.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nodatas.jpeg; sourceTree = "<group>"; };
 		BBE8170922F460C300B64617 /* SKPDFReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKPDFReader.h; sourceTree = "<group>"; };
 		BBE8170A22F460C300B64617 /* SKPDFReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKPDFReader.m; sourceTree = "<group>"; };
-		BBE8170C22F463E900B64617 /* CollectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectViewController.h; sourceTree = "<group>"; };
-		BBE8170D22F463E900B64617 /* CollectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectViewController.m; sourceTree = "<group>"; };
 		BBE8170F22F4687800B64617 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
 		BBE8171022F4687800B64617 /* no_head.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_head.jpeg; sourceTree = "<group>"; };
-		BBE8171322F4708C00B64617 /* InforViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InforViewController.h; sourceTree = "<group>"; };
-		BBE8171422F4708C00B64617 /* InforViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InforViewController.m; sourceTree = "<group>"; };
-		BBE8171622F47D7200B64617 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		BBE8171722F47D7200B64617 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BBF7CA8E231966F900C60177 /* dengji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dengji@2x.png"; sourceTree = "<group>"; };
+		BBF7CA8F231966F900C60177 /* guanyuwomen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanyuwomen@2x.png"; sourceTree = "<group>"; };
+		BBF7CA90231966F900C60177 /* shoucang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shoucang@2x.png"; sourceTree = "<group>"; };
+		BBF7CA91231966F900C60177 /* guanzhu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanzhu@2x.png"; sourceTree = "<group>"; };
+		BBF7CA92231966F900C60177 /* guanzhu_zuozhe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanzhu_zuozhe@2x.png"; sourceTree = "<group>"; };
+		BBF7CA93231966F900C60177 /* shudan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shudan@2x.png"; sourceTree = "<group>"; };
 		D523952BC84A2C969E95EA5B /* libPods-PDFReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDFReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -360,6 +423,9 @@
 		588885D222EAC54100F28A50 /* PDFReader */ = {
 			isa = PBXGroup;
 			children = (
+				BBAE8CA7230D706F00AE35D6 /* Tools */,
+				BBDB8E472301949F00A37DF8 /* ViewController */,
+				BBDB8E462301945800A37DF8 /* NetWork */,
 				BB845C8322F482AE007238EA /* Third */,
 				BBE816F122F430A300B64617 /* Views */,
 				58BA5F6122EFE375003205F0 /* images */,
@@ -369,18 +435,9 @@
 				588885D422EAC54100F28A50 /* AppDelegate.m */,
 				588885D622EAC54100F28A50 /* ViewController.h */,
 				588885D722EAC54100F28A50 /* ViewController.m */,
-				5888868E22EAD78600F28A50 /* FirstViewController.h */,
-				5888868F22EAD78600F28A50 /* FirstViewController.m */,
-				5888869122EAD79100F28A50 /* SecondViewController.h */,
-				5888869222EAD79100F28A50 /* SecondViewController.m */,
-				BBE8170C22F463E900B64617 /* CollectViewController.h */,
-				BBE8170D22F463E900B64617 /* CollectViewController.m */,
-				BBE8171322F4708C00B64617 /* InforViewController.h */,
-				BBE8171422F4708C00B64617 /* InforViewController.m */,
-				BBE8171622F47D7200B64617 /* LoginViewController.h */,
-				BBE8171722F47D7200B64617 /* LoginViewController.m */,
 				58DA88B622EECA1E0057AD6B /* PrefixHeader.pch */,
 				588885D922EAC54200F28A50 /* Main.storyboard */,
+				BBDB8E6023019AD700A37DF8 /* xinwen.png */,
 				588885DF22EAC54D00F28A50 /* Assets.xcassets */,
 				588885E122EAC54D00F28A50 /* LaunchScreen.storyboard */,
 				588885E422EAC54D00F28A50 /* Info.plist */,
@@ -458,6 +515,15 @@
 		5888865722EAC9E200F28A50 /* PdfSources */ = {
 			isa = PBXGroup;
 			children = (
+				BBD9A1FD231BF2520078ACF3 /* IOS开发总结.pdf */,
+				BBD9A1FB231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf */,
+				BBD9A1F9231BF2130078ACF3 /* 苹果编码规范.PDF */,
+				BBD9A1F7231BF1EC0078ACF3 /* 第一讲开篇词.pdf */,
+				BBD9A1F5231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf */,
+				BBD9A1F3231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf */,
+				BBD9A1F1231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf */,
+				BBD9A1EF231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf */,
+				BBD9A1ED231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf */,
 				5888869622EADE1400F28A50 /* 建立你自己的iOS开发知识体系.pdf */,
 				5888869522EADE1400F28A50 /* App 启动速度怎么做优化与监控？.pdf */,
 				5888869822EADE1400F28A50 /* Auto Layout 是怎么进行自动布局的，性能如何？.pdf */,
@@ -477,6 +543,7 @@
 		58BA5F6122EFE375003205F0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BBF7CA8D231966F900C60177 /* 关于 */,
 				BB845C8122F48006007238EA /* books.jpg */,
 				BBE8170F22F4687800B64617 /* head.jpg */,
 				BBE8171022F4687800B64617 /* no_head.jpeg */,
@@ -621,13 +688,133 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		BBAE8CA7230D706F00AE35D6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CA8230D708B00AE35D6 /* UserDefault.h */,
+				BBAE8CA9230D708B00AE35D6 /* UserDefault.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		BBAE8CAB230ED47800AE35D6 /* shudan */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CAC230ED47800AE35D6 /* BookViewController.m */,
+				BBAE8CAD230ED47800AE35D6 /* BookViewController.h */,
+			);
+			path = shudan;
+			sourceTree = "<group>";
+		};
+		BBAE8CAE230ED47900AE35D6 /* xinwen */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CAF230ED47900AE35D6 /* NewsTableViewController.h */,
+				BBAE8CB1230ED47900AE35D6 /* NewsTableViewController.m */,
+				BBAE8CB2230ED47900AE35D6 /* SearchViewController.h */,
+				BBAE8CB0230ED47900AE35D6 /* SearchViewController.m */,
+			);
+			path = xinwen;
+			sourceTree = "<group>";
+		};
+		BBAE8CB3230ED47900AE35D6 /* shoucang */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CB4230ED47900AE35D6 /* CollectViewController.h */,
+				BBAE8CB5230ED47900AE35D6 /* CollectViewController.m */,
+			);
+			path = shoucang;
+			sourceTree = "<group>";
+		};
+		BBAE8CB6230ED47900AE35D6 /* guanyu */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CB7230ED47900AE35D6 /* SecondViewController.h */,
+				BBAE8CBC230ED47900AE35D6 /* SecondViewController.m */,
+				BBAE8CB9230ED47900AE35D6 /* InforViewController.m */,
+				BBAE8CBA230ED47900AE35D6 /* InforViewController.h */,
+				BBAE8CBB230ED47900AE35D6 /* LoginViewController.h */,
+				BBAE8CB8230ED47900AE35D6 /* LoginViewController.m */,
+			);
+			path = guanyu;
+			sourceTree = "<group>";
+		};
+		BBAE8CBD230ED47900AE35D6 /* guanzhu */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CC9230ED71300AE35D6 /* AttentionViewController.h */,
+				BBAE8CCA230ED71300AE35D6 /* AttentionViewController.m */,
+			);
+			path = guanzhu;
+			sourceTree = "<group>";
+		};
+		BBAE8CBE230ED47900AE35D6 /* shuji */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CBF230ED47900AE35D6 /* FirstViewController.h */,
+				BBAE8CC0230ED47900AE35D6 /* FirstViewController.m */,
+			);
+			path = shuji;
+			sourceTree = "<group>";
+		};
+		BBAE8CCC230EDB3100AE35D6 /* guanzhuzuozhe */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CCD230EDB4200AE35D6 /* AttentionAutherViewController.h */,
+				BBAE8CCE230EDB4200AE35D6 /* AttentionAutherViewController.m */,
+			);
+			path = guanzhuzuozhe;
+			sourceTree = "<group>";
+		};
+		BBDB8E462301945800A37DF8 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				BBDB8E5D230194D900A37DF8 /* AFNetworkingManager.h */,
+				BBDB8E5E230194D900A37DF8 /* AFNetworkingManager.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		BBDB8E472301949F00A37DF8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE8CCC230EDB3100AE35D6 /* guanzhuzuozhe */,
+				BBAE8CB6230ED47900AE35D6 /* guanyu */,
+				BBAE8CBD230ED47900AE35D6 /* guanzhu */,
+				BBAE8CB3230ED47900AE35D6 /* shoucang */,
+				BBAE8CAB230ED47800AE35D6 /* shudan */,
+				BBAE8CBE230ED47900AE35D6 /* shuji */,
+				BBAE8CAE230ED47900AE35D6 /* xinwen */,
+				BB1E6EC72304330300398994 /* WebViewController.h */,
+				BB1E6EC82304330300398994 /* WebViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		BBE816F122F430A300B64617 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BBE816F222F430C800B64617 /* TableHeaderView.h */,
 				BBE816F322F430C800B64617 /* TableHeaderView.m */,
+				BB1E6ED02307AAF900398994 /* NewsTableViewCell.h */,
+				BB1E6ED12307AAF900398994 /* NewsTableViewCell.m */,
+				BB1E6ED22307AAF900398994 /* NewsTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BBF7CA8D231966F900C60177 /* 关于 */ = {
+			isa = PBXGroup;
+			children = (
+				BBDB06CF231BECFB00D59722 /* tuichu@2x.png */,
+				BBF7CA8E231966F900C60177 /* dengji@2x.png */,
+				BBF7CA8F231966F900C60177 /* guanyuwomen@2x.png */,
+				BBF7CA90231966F900C60177 /* shoucang@2x.png */,
+				BBF7CA91231966F900C60177 /* guanzhu@2x.png */,
+				BBF7CA92231966F900C60177 /* guanzhu_zuozhe@2x.png */,
+				BBF7CA93231966F900C60177 /* shudan@2x.png */,
+			);
+			path = "关于";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -736,6 +923,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE8171222F4687800B64617 /* no_head.jpeg in Resources */,
+				BBD9A1F0231BF11E0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（高级篇）.pdf in Resources */,
 				588886A922EADE1500F28A50 /* App 如何通过注入动态库的方式实现极速编译调试.pdf in Resources */,
 				BBE8171122F4687800B64617 /* head.jpg in Resources */,
 				5888867322EAC9E200F28A50 /* Reader-Print.png in Resources */,
@@ -747,6 +935,8 @@
 				5888868522EAC9E200F28A50 /* Reader-Mark-N.png in Resources */,
 				5888867C22EAC9E200F28A50 /* Reader-Mark-Y@3x.png in Resources */,
 				5895305C22F42C5D0082E958 /* shuji@2x.png in Resources */,
+				BBD9A1F2231BF1440078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（中级篇）.pdf in Resources */,
+				BBDB06D0231BECFB00D59722 /* tuichu@2x.png in Resources */,
 				58BA5F7722EFEAD9003205F0 /* 001.png in Resources */,
 				58BA5F7022EFEAD9003205F0 /* 007.png in Resources */,
 				BB845C8222F48006007238EA /* books.jpg in Resources */,
@@ -755,20 +945,29 @@
 				5888868222EAC9E200F28A50 /* Reader-Print@3x.png in Resources */,
 				58BA5F7522EFEAD9003205F0 /* 003.png in Resources */,
 				58BA5F7622EFEAD9003205F0 /* 002.png in Resources */,
+				BBD9A1FE231BF2520078ACF3 /* IOS开发总结.pdf in Resources */,
 				58BA5F7822EFEAD9003205F0 /* 004.png in Resources */,
+				BBF7CA98231966F900C60177 /* guanzhu_zuozhe@2x.png in Resources */,
 				588886A822EADE1500F28A50 /* PHP5中文手册.pdf in Resources */,
+				BBDB8E6123019AD700A37DF8 /* xinwen.png in Resources */,
 				5888868422EAC9E200F28A50 /* Reader-Mark-Y.png in Resources */,
 				58BA5F7322EFEAD9003205F0 /* 005.png in Resources */,
 				5888867F22EAC9E200F28A50 /* Reader-Thumbs@2x.png in Resources */,
 				5888868822EAC9E200F28A50 /* Reader-Mark-N@3x.png in Resources */,
+				BBD9A1FC231BF2350078ACF3 /* iPhone应用用户体验设计实践与案例.pdf in Resources */,
 				5888867822EAC9E200F28A50 /* Reader-Button-H.png in Resources */,
 				5888867522EAC9E200F28A50 /* Reader-Email@3x.png in Resources */,
+				BBF7CA95231966F900C60177 /* guanyuwomen@2x.png in Resources */,
 				BB845C9322F482AE007238EA /* SVProgressHUD.bundle in Resources */,
 				5888869F22EADE1500F28A50 /* Clang、Infer 和 OCLint ，我们应该使用谁来做静态分析？.pdf in Resources */,
 				588886A322EADE1500F28A50 /* Auto Layout 是怎么进行自动布局的，性能如何？.pdf in Resources */,
 				5888868022EAC9E200F28A50 /* Reader-Email.png in Resources */,
+				BBF7CA99231966F900C60177 /* shudan@2x.png in Resources */,
+				BBD9A1FA231BF2130078ACF3 /* 苹果编码规范.PDF in Resources */,
 				588886A422EADE1500F28A50 /* 项目大了人员多了，架构怎么设计更合理？.pdf in Resources */,
+				BB1E6ED42307AAF900398994 /* NewsTableViewCell.xib in Resources */,
 				5888867022EAC9E200F28A50 /* Reader-Email@2x.png in Resources */,
+				BBD9A1F8231BF1EC0078ACF3 /* 第一讲开篇词.pdf in Resources */,
 				588886A122EADE1500F28A50 /* 建立你自己的iOS开发知识体系.pdf in Resources */,
 				588886A022EADE1500F28A50 /* App 启动速度怎么做优化与监控？.pdf in Resources */,
 				5888868B22EAC9E200F28A50 /* Reader-Export@2x.png in Resources */,
@@ -778,13 +977,18 @@
 				5895305E22F42D9A0082E958 /* ziyuan@2x.png in Resources */,
 				5888867D22EAC9E200F28A50 /* Reader-Print@2x.png in Resources */,
 				5888868622EAC9E200F28A50 /* AppIcon-152.png in Resources */,
+				BBD9A1F4231BF1880078ACF3 /* 29-如何在OS中进行面向测试驱动开发和面向行为驱动开发？.pdf in Resources */,
 				5888867922EAC9E200F28A50 /* AppIcon-076.png in Resources */,
+				BBF7CA96231966F900C60177 /* shoucang@2x.png in Resources */,
 				588886A622EADE1500F28A50 /* 无侵入的埋点方案如何实现.pdf in Resources */,
 				588886A522EADE1500F28A50 /* 链接器：符号是怎么绑定到地址上的？.pdf in Resources */,
 				5888867E22EAC9E200F28A50 /* Reader-Thumbs.png in Resources */,
 				BBE8170822F45B0500B64617 /* nodatas.jpeg in Resources */,
 				5888867622EAC9E200F28A50 /* Reader-Mark-Y@2x.png in Resources */,
 				588886A222EADE1500F28A50 /* 如何利用 Clang 为 App 提质？.pdf in Resources */,
+				BBD9A1F6231BF1BE0078ACF3 /* 本地和推送通知编程指南.pdf in Resources */,
+				BBD9A1EE231BF06B0078ACF3 /* 25个增强iOS应用程序性能的提示和技巧（初级篇）.pdf in Resources */,
+				BBF7CA94231966F900C60177 /* dengji@2x.png in Resources */,
 				58BA5F7422EFEAD9003205F0 /* 010.png in Resources */,
 				5888867722EAC9E200F28A50 /* Reader-Button-H@3x.png in Resources */,
 				5888867222EAC9E200F28A50 /* Reader-Button-N@3x.png in Resources */,
@@ -795,6 +999,7 @@
 				5888867B22EAC9E200F28A50 /* Reader-Button-H@2x.png in Resources */,
 				58BA5F7922EFEAD9003205F0 /* 009.png in Resources */,
 				58BA5F6E22EFEAD9003205F0 /* 011.png in Resources */,
+				BBF7CA97231966F900C60177 /* guanzhu@2x.png in Resources */,
 				58BA5F7122EFEAD9003205F0 /* 012.png in Resources */,
 				588886A722EADE1500F28A50 /* 人月神话20周年中文版.pdf in Resources */,
 				5888868322EAC9E200F28A50 /* AppIcon-120.png in Resources */,
@@ -862,24 +1067,32 @@
 			files = (
 				58DA88ED22EED55F0057AD6B /* ReaderThumbCache.m in Sources */,
 				58DA88E822EED55F0057AD6B /* ReaderThumbFetch.m in Sources */,
+				BBAE8CC5230ED47900AE35D6 /* LoginViewController.m in Sources */,
+				BBAE8CC7230ED47900AE35D6 /* SecondViewController.m in Sources */,
 				BB845C9022F482AE007238EA /* SVProgressAnimatedView.m in Sources */,
 				58DA88E222EED55F0057AD6B /* ReaderThumbQueue.m in Sources */,
-				BBE8171522F4708C00B64617 /* InforViewController.m in Sources */,
 				BB845C9222F482AE007238EA /* SVIndefiniteAnimatedView.m in Sources */,
 				BB845C9122F482AE007238EA /* SVProgressHUD.m in Sources */,
 				58DA88EA22EED55F0057AD6B /* ReaderMainToolbar.m in Sources */,
-				5888869322EAD79100F28A50 /* SecondViewController.m in Sources */,
 				58DA88E022EED55F0057AD6B /* ReaderContentTile.m in Sources */,
 				58DA88F222EED55F0057AD6B /* ThumbsMainToolbar.m in Sources */,
 				BBE8170B22F460C300B64617 /* SKPDFReader.m in Sources */,
+				BBAE8CCF230EDB4200AE35D6 /* AttentionAutherViewController.m in Sources */,
 				588885DE22EAC54200F28A50 /* PDFReader.xcdatamodeld in Sources */,
+				BBDB8E5F230194D900A37DF8 /* AFNetworkingManager.m in Sources */,
+				BBAE8CC6230ED47900AE35D6 /* InforViewController.m in Sources */,
 				588885D822EAC54100F28A50 /* ViewController.m in Sources */,
+				BBAE8CC3230ED47900AE35D6 /* NewsTableViewController.m in Sources */,
 				58DA88EE22EED55F0057AD6B /* ReaderThumbsView.m in Sources */,
 				58DA88E722EED55F0057AD6B /* ReaderViewController.m in Sources */,
 				58DA88E522EED55F0057AD6B /* CGPDFDocument.m in Sources */,
+				BBAE8CAA230D708B00AE35D6 /* UserDefault.m in Sources */,
+				BB1E6EC92304330300398994 /* WebViewController.m in Sources */,
+				BB1E6ED32307AAF900398994 /* NewsTableViewCell.m in Sources */,
 				58DA88E322EED55F0057AD6B /* ReaderContentPage.m in Sources */,
 				58DA88F122EED55F0057AD6B /* ReaderConstants.m in Sources */,
 				58DA88EC22EED55F0057AD6B /* ReaderDocumentOutline.m in Sources */,
+				BBAE8CC2230ED47900AE35D6 /* SearchViewController.m in Sources */,
 				58DA88E622EED55F0057AD6B /* ReaderContentView.m in Sources */,
 				58DA88F322EED55F0057AD6B /* ReaderMainPagebar.m in Sources */,
 				BB845C8F22F482AE007238EA /* SVRadialGradientLayer.m in Sources */,
@@ -888,13 +1101,14 @@
 				588885E622EAC54D00F28A50 /* main.m in Sources */,
 				588885D522EAC54100F28A50 /* AppDelegate.m in Sources */,
 				58DA88E422EED55F0057AD6B /* ReaderThumbRender.m in Sources */,
+				BBAE8CC1230ED47900AE35D6 /* BookViewController.m in Sources */,
+				BBAE8CC4230ED47900AE35D6 /* CollectViewController.m in Sources */,
+				BBAE8CCB230ED71300AE35D6 /* AttentionViewController.m in Sources */,
+				BBAE8CC8230ED47900AE35D6 /* FirstViewController.m in Sources */,
 				58DA88F022EED55F0057AD6B /* ReaderThumbRequest.m in Sources */,
 				58DA88EF22EED55F0057AD6B /* ThumbsViewController.m in Sources */,
-				5888869022EAD78600F28A50 /* FirstViewController.m in Sources */,
 				58DA88E122EED55F0057AD6B /* UIXToolbarView.m in Sources */,
 				BBE816F422F430C800B64617 /* TableHeaderView.m in Sources */,
-				BBE8170E22F463E900B64617 /* CollectViewController.m in Sources */,
-				BBE8171822F47D7200B64617 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,7 +1281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66RS37LLGX;
 				GCC_PREFIX_HEADER = PDFReader/PrefixHeader.pch;
 				INFOPLIST_FILE = PDFReader/Info.plist;
@@ -1078,7 +1292,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.iosPDFReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = PDFReading_development;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1088,8 +1302,8 @@
 			baseConfigurationReference = 1254DD062F79EE3E8BCE0CAE /* Pods-PDFReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66RS37LLGX;
 				GCC_PREFIX_HEADER = PDFReader/PrefixHeader.pch;
 				INFOPLIST_FILE = PDFReader/Info.plist;
@@ -1100,7 +1314,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.iosPDFReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = PDFReading_distribution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
