@@ -9,11 +9,14 @@
 #import "DetailViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DetailModel.h"
+#import "DataViewController.h"
+#import "BLEPeripheral.h"
 
 @interface DetailViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate,UITableViewDataSource>
 
 @property (nonatomic ,strong) UITableView *tableiView ;
 @property (nonatomic ,strong) NSMutableArray *dataArray;
+@property(strong, nonatomic) BLEPeripheral        *activePeripheral;            // blePeripheral
 
 @end
 
@@ -23,7 +26,6 @@
     [super viewDidDisappear:animated];
     
     [SVProgressHUD dismiss];
-    [self.manager cancelPeripheralConnection:self.peripheral];
 }
 
 - (NSMutableArray *)dataArray {
@@ -39,6 +41,11 @@
     
     self.title = @"服务";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:(UIBarButtonItemStyleDone) target:self action:@selector(backActions)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log" style:(UIBarButtonItemStyleDone) target:self action:@selector(rightBarButtonItemActions:)];
+ 
     
     [self initCentralManager];
     [self performSelector:@selector(stopstopScan111) withObject:nil afterDelay:10];
@@ -62,6 +69,11 @@
     textView.font = [UIFont systemFontOfSize:14];
     textView.text = text;
     self.tableiView.tableHeaderView = textView;
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aaaaaaaaaasdfasdfActions:) name:@"aaaaaaaaaasdfasdf" object:nil];
+    
 }
 
 - (void)stopstopScan111 {
@@ -69,7 +81,32 @@
     if (self.manager.isScanning) {
         [_manager stopScan];
     }
-    [SVProgressHUD showErrorWithStatus:@"连接设备失败"];
+    
+    if ([self.manager isScanning]) {
+        
+        [SVProgressHUD showErrorWithStatus:@"连接设备失败"];
+    }
+    
+}
+
+- (void)backActions {
+
+    if (self.manager && self.peripheral) {
+        [self.manager cancelPeripheralConnection:self.peripheral];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+- (void)rightBarButtonItemActions:(UIBarButtonItem *)right {
+    
+    NSLog(@"--- ---");
+    DataViewController *data = [[DataViewController alloc]init];
+    [self.navigationController pushViewController:data animated:YES];
+    typeof(self) this = self;
+    data.block = ^(NSString * _Nonnull str) {
+        
+        [this DataViewControllerWithCmd:str];
+    };
 }
 
 - (void)initCentralManager {
@@ -80,6 +117,47 @@
     }
 
     self.manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+}
+
+- (void)DataViewControllerWithCmd:(NSString *)cmd {
+
+    NSData *data;
+    if ([cmd containsString:@"ff0000"]) {//红色
+
+        data = [self buildColorWithSide:0 r:255 andg:0 andb:0];
+    }else if ([cmd containsString:@"00008000"]){
+        data = [self buildColorWithSide:0 r:0 andg:128 andb:0];
+    }else if ([cmd containsString:@"00006000"]){
+       
+        data = [self buildColorWithSide:0 r:0 andg:0 andb:0];
+    }
+    
+    [self sendBluetoothData:data];
+}
+//[self changeColorWithSide:0 R:255 andG:0 andB:0];
+
+//颜色选择
+-(NSData*)buildColorWithSide:(short)side r:(int)r andg:(int)g andb:(int)b{
+    
+    unsigned char a[12]={0xff,0x55,0x09,0x04,0x02,0x08,0x00,0x00,0,0,0,0};
+    a[8] = side;
+    a[9] =  r;
+    a[10] = g ;
+    a[11] =  b;
+    // printf("a=%c",a);
+    NSData * data = [NSData dataWithBytes:a length:12];
+    //   NSLog(@"%@",data);
+    return data;
+}
+#pragma mark:--- 蓝牙发送 data
+
+- (void)sendBluetoothData:(NSData*)data {
+
+//    [[BluetoothCentralManager sharedManager].activePeripheral sendDataMandatory:data];
+    NSLog(@" send data  = %@", data);
+    
+    [self.activePeripheral sendData:data];
+    
 }
 
 #pragma mark - CBCentralManagerDelegate
@@ -131,10 +209,21 @@
     // 连接设备之后设置蓝牙对象的代理,扫描服务
     [self.peripheral setDelegate:self];
     [self.peripheral discoverServices:nil];
+
+    [self.manager stopScan];
     
     NSLog(@"扫描服务");
+    if (_activePeripheral == nil) {
+        self.activePeripheral = [[BLEPeripheral alloc]init];
+    }
+    _activePeripheral.activePeripheral = peripheral;
+    // 如果当前设备是已连接设备开始扫描服务
+    CBUUID    *TransSerUUID     = [CBUUID UUIDWithString:@"FFF0"];
+    NSArray    *serviceArray    = [NSArray arrayWithObjects:TransSerUUID, nil];
     
-}
+    [_activePeripheral startPeripheral:peripheral DiscoverServices:serviceArray];
+    
+ }
 
 // 获取热点强度
 -(void)peripheral:(CBPeripheral *)peripheral didReadRSSI:(NSNumber *)RSSI error:(NSError *)error {
@@ -161,6 +250,20 @@
     }
 }
 
+- (void)aaaaaaaaaasdfasdfActions:(NSNotification *)notifit {
+    
+    CBService *service = notifit.object;
+   
+    
+    DetailModel *model = [[DetailModel alloc]init];
+    model.header_name = service.UUID.UUIDString;
+    model.header_type = service.UUID.UUIDString;
+    model.dataArray = [[NSMutableArray alloc]initWithArray:service.characteristics];
+    [self.dataArray addObject:model];
+    
+    [self.tableiView reloadData];
+    
+}
 //已搜索到Characteristics
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error{
     NSLog(@"发现特征的服务:%@ (%@)",service.UUID.data ,service.UUID);

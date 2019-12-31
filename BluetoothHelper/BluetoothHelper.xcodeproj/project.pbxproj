@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		58048E4E230E6F120008BB02 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58048E4D230E6F120008BB02 /* DetailModel.m */; };
+		58CCF12323BAF89D004802FC /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CCF12223BAF89D004802FC /* DataViewController.m */; };
+		58CCF12623BAFA90004802FC /* WriteDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CCF12523BAFA90004802FC /* WriteDataViewController.m */; };
+		58CCF12A23BB1940004802FC /* BLEPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CCF12823BB193F004802FC /* BLEPeripheral.m */; };
+		58CCF12E23BB1F24004802FC /* BluetoothCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CCF12B23BB1F24004802FC /* BluetoothCentralManager.m */; };
 		BB1E6EE32307E1BF00398994 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6EE22307E1BF00398994 /* AppDelegate.m */; };
 		BB1E6EE92307E1BF00398994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1E6EE72307E1BF00398994 /* Main.storyboard */; };
 		BB1E6EEC2307E1BF00398994 /* BluetoothHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6EEA2307E1BF00398994 /* BluetoothHelper.xcdatamodeld */; };
@@ -57,6 +61,15 @@
 /* Begin PBXFileReference section */
 		58048E4C230E6F120008BB02 /* DetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
 		58048E4D230E6F120008BB02 /* DetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
+		58CCF12123BAF89D004802FC /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		58CCF12223BAF89D004802FC /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		58CCF12423BAFA90004802FC /* WriteDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WriteDataViewController.h; sourceTree = "<group>"; };
+		58CCF12523BAFA90004802FC /* WriteDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteDataViewController.m; sourceTree = "<group>"; };
+		58CCF12823BB193F004802FC /* BLEPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEPeripheral.m; sourceTree = "<group>"; };
+		58CCF12923BB193F004802FC /* BLEPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEPeripheral.h; sourceTree = "<group>"; };
+		58CCF12B23BB1F24004802FC /* BluetoothCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothCentralManager.m; sourceTree = "<group>"; };
+		58CCF12C23BB1F24004802FC /* BLEControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEControllerDelegate.h; sourceTree = "<group>"; };
+		58CCF12D23BB1F24004802FC /* BluetoothCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothCentralManager.h; sourceTree = "<group>"; };
 		BB1E6EDE2307E1BF00398994 /* BluetoothHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1E6EE12307E1BF00398994 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB1E6EE22307E1BF00398994 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,6 +142,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58CCF12723BB193F004802FC /* BLEPeriphera */ = {
+			isa = PBXGroup;
+			children = (
+				58CCF12C23BB1F24004802FC /* BLEControllerDelegate.h */,
+				58CCF12D23BB1F24004802FC /* BluetoothCentralManager.h */,
+				58CCF12B23BB1F24004802FC /* BluetoothCentralManager.m */,
+				58CCF12923BB193F004802FC /* BLEPeripheral.h */,
+				58CCF12823BB193F004802FC /* BLEPeripheral.m */,
+			);
+			path = BLEPeriphera;
+			sourceTree = "<group>";
+		};
 		BB1E6ED52307E1BF00398994 = {
 			isa = PBXGroup;
 			children = (
@@ -153,11 +178,11 @@
 		BB1E6EE02307E1BF00398994 /* BluetoothHelper */ = {
 			isa = PBXGroup;
 			children = (
+				58CCF12723BB193F004802FC /* BLEPeriphera */,
 				BB1E6F3F23080B5200398994 /* Images */,
 				BB1E6F222307E70E00398994 /* Tools */,
 				BB1E6F192307E38700398994 /* LeftItems */,
 				BB1E6F1A2307E38700398994 /* MainViewController */,
-				BB1E6F1B2307E38800398994 /* RightItems */,
 				BB1E6EE12307E1BF00398994 /* AppDelegate.h */,
 				BB1E6EE22307E1BF00398994 /* AppDelegate.m */,
 				BB1E6F332307E74A00398994 /* PrefixHeader.pch */,
@@ -207,17 +232,14 @@
 				BB1E6F382307EF7400398994 /* Model.m */,
 				BB1E6F3A2307FC7700398994 /* DetailViewController.h */,
 				BB1E6F3B2307FC7700398994 /* DetailViewController.m */,
+				58CCF12123BAF89D004802FC /* DataViewController.h */,
+				58CCF12223BAF89D004802FC /* DataViewController.m */,
+				58CCF12423BAFA90004802FC /* WriteDataViewController.h */,
+				58CCF12523BAFA90004802FC /* WriteDataViewController.m */,
 				58048E4C230E6F120008BB02 /* DetailModel.h */,
 				58048E4D230E6F120008BB02 /* DetailModel.m */,
 			);
 			path = MainViewController;
-			sourceTree = "<group>";
-		};
-		BB1E6F1B2307E38800398994 /* RightItems */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RightItems;
 			sourceTree = "<group>";
 		};
 		BB1E6F222307E70E00398994 /* Tools */ = {
@@ -413,13 +435,17 @@
 				BB1E6F302307E72C00398994 /* SVProgressHUD.m in Sources */,
 				BB1E6F312307E72C00398994 /* SVIndefiniteAnimatedView.m in Sources */,
 				BB1E6F2E2307E72C00398994 /* SVRadialGradientLayer.m in Sources */,
+				58CCF12323BAF89D004802FC /* DataViewController.m in Sources */,
 				BB1E6EF42307E1C100398994 /* main.m in Sources */,
 				BB1E6F2F2307E72C00398994 /* SVProgressAnimatedView.m in Sources */,
 				BB1E6EE32307E1BF00398994 /* AppDelegate.m in Sources */,
+				58CCF12A23BB1940004802FC /* BLEPeripheral.m in Sources */,
 				BB1E6F3C2307FC7700398994 /* DetailViewController.m in Sources */,
 				58048E4E230E6F120008BB02 /* DetailModel.m in Sources */,
+				58CCF12623BAFA90004802FC /* WriteDataViewController.m in Sources */,
 				BB1E6F1E2307E3AA00398994 /* MainViewController.m in Sources */,
 				BB1E6F212307E51200398994 /* SettingViewController.m in Sources */,
+				58CCF12E23BB1F24004802FC /* BluetoothCentralManager.m in Sources */,
 				BB1E6F392307EF7400398994 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +618,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = BluetoothHelper/PrefixHeader.pch;
@@ -604,7 +630,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.BluetoothHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Development;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -613,9 +639,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 66RS37LLGX;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = BluetoothHelper/PrefixHeader.pch;
 				INFOPLIST_FILE = BluetoothHelper/Info.plist;
@@ -626,7 +652,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.BluetoothHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = BluetoothHelper_dis;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
