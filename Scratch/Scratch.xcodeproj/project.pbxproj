@@ -10,6 +10,8 @@
 		587B1C2023C6BF28000393B3 /* ScratchNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B1C1F23C6BF28000393B3 /* ScratchNetWork.m */; };
 		587B1C2423C6C09A000393B3 /* SKProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B1C2223C6C09A000393B3 /* SKProgressHUD.m */; };
 		587B1C2823C70A5B000393B3 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B1C2623C70A5B000393B3 /* UserManager.m */; };
+		58F4C43E23CC208400A5F4BD /* HTTPFileResponse+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F4C43D23CC208400A5F4BD /* HTTPFileResponse+SVG.m */; };
+		58F4C44023CC217800A5F4BD /* build in Resources */ = {isa = PBXBuildFile; fileRef = 58F4C43F23CC217800A5F4BD /* build */; };
 		BB63F95A23BA27CB00114964 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB63F95923BA27CB00114964 /* AppDelegate.m */; };
 		BB63F96323BA27CB00114964 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB63F96123BA27CB00114964 /* Main.storyboard */; };
 		BB63F96523BA27CD00114964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB63F96423BA27CD00114964 /* Assets.xcassets */; };
@@ -129,6 +131,9 @@
 		587B1C2323C6C09A000393B3 /* SKProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProgressHUD.h; sourceTree = "<group>"; };
 		587B1C2623C70A5B000393B3 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		587B1C2723C70A5B000393B3 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		58F4C43C23CC208300A5F4BD /* HTTPFileResponse+SVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPFileResponse+SVG.h"; sourceTree = "<group>"; };
+		58F4C43D23CC208400A5F4BD /* HTTPFileResponse+SVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPFileResponse+SVG.m"; sourceTree = "<group>"; };
+		58F4C43F23CC217800A5F4BD /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = "<group>"; };
 		6501B6F8DB223B18D12F8C88 /* Pods-Scratch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scratch.release.xcconfig"; path = "Target Support Files/Pods-Scratch/Pods-Scratch.release.xcconfig"; sourceTree = "<group>"; };
 		B7FA60BEC7460265EC06B6BD /* Pods-Scratch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scratch.debug.xcconfig"; path = "Target Support Files/Pods-Scratch/Pods-Scratch.debug.xcconfig"; sourceTree = "<group>"; };
 		BB63F95523BA27CB00114964 /* Scratch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scratch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -387,6 +392,7 @@
 		BB63F95723BA27CB00114964 /* Scratch */ = {
 			isa = PBXGroup;
 			children = (
+				58F4C43F23CC217800A5F4BD /* build */,
 				BB70565923C9A9FF00EFF775 /* Web */,
 				587B1C1C23C6BEDB000393B3 /* Images */,
 				587B1C1D23C6BEDB000393B3 /* ScratchNetWork */,
@@ -792,6 +798,8 @@
 		BB63FA5E23C4C67C00114964 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				58F4C43C23CC208300A5F4BD /* HTTPFileResponse+SVG.h */,
+				58F4C43D23CC208400A5F4BD /* HTTPFileResponse+SVG.m */,
 				BB63FA5F23C4C6F600114964 /* UIColor+EXI.h */,
 				BB63FA6023C4C6F600114964 /* UIColor+EXI.m */,
 			);
@@ -890,8 +898,8 @@
 			children = (
 				BB70566E23C9AA9200EFF775 /* Model */,
 				BB70565A23C9A9FF00EFF775 /* BaseWebView */,
-				BB70566123C9A9FF00EFF775 /* ScratchWebViewController.m */,
 				BB70566223C9A9FF00EFF775 /* ScratchWebViewController.h */,
+				BB70566123C9A9FF00EFF775 /* ScratchWebViewController.m */,
 				BB70566323C9A9FF00EFF775 /* Views */,
 			);
 			path = Web;
@@ -1003,6 +1011,7 @@
 				BB63FA7223C7638200114964 /* mainView_left_bg@2x.png in Resources */,
 				BB63F9E923C4B78400114964 /* KnowTableViewCell.xib in Resources */,
 				BB63FA8423C768B500114964 /* setting_family@3x.png in Resources */,
+				58F4C44023CC217800A5F4BD /* build in Resources */,
 				BB70566923C9A9FF00EFF775 /* icon_back_black_v3@2x.png in Resources */,
 				BB63FA9623C7715D00114964 /* Login_bg@2x.png in Resources */,
 				BB63FAA123C7749C00114964 /* wantKnow_zan_slected@3x.png in Resources */,
@@ -1124,6 +1133,7 @@
 				BB63FA3423C4B7D500114964 /* ZFKVOController.m in Sources */,
 				BB63FA3F23C4B7D500114964 /* ZFSliderView.m in Sources */,
 				BB70566B23C9A9FF00EFF775 /* ScratchWebViewController.m in Sources */,
+				58F4C43E23CC208400A5F4BD /* HTTPFileResponse+SVG.m in Sources */,
 				BB63FA4723C4B7D500114964 /* FullScreenViewController.m in Sources */,
 				BB63F9D123C4B50E00114964 /* MessageTableViewCell.m in Sources */,
 				BB70565823C9A8E100EFF775 /* BaseModel.m in Sources */,
@@ -1302,7 +1312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66RS37LLGX;
+				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Scratch/PrefixHeader.pch";
 				INFOPLIST_FILE = Scratch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1324,7 +1334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66RS37LLGX;
+				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Scratch/PrefixHeader.pch";
 				INFOPLIST_FILE = Scratch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -36,6 +36,9 @@
 #import "FileManger.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
+#import "ScratchWebViewController.h"
+
+
 
 
 #define mainView_left_width  255

@@ -7,30 +7,61 @@
 //
 
 #import "AppDelegate.h"
+#import <HTTPServer.h>//本地服务器
+#import "HTTPFileResponse+SVG.h"
 
 @interface AppDelegate ()
-
+/**本地服务器*/
+@property (strong, nonatomic) HTTPServer *httpServer;
+/**是否启动了本地服务器*/
+@property(nonatomic,assign) BOOL startServer;
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+ 
     
-//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//
-//    [self appConfigSetting];
-//
-//    [self setAppLanguage];
-//    [self openServer];
-//
-//    MainViewController *home = [[MainViewController alloc] init];
-//    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:home];
-//    self.window.rootViewController = nav;
-//    [self.window makeKeyAndVisible];
+    [self openServer];
     [ScratchNetWork startCheckNewWork];
 
     return YES;
+}
+
+//开启本地服务器
+- (void)openServer {
+    
+    if (self.httpServer ==nil) {
+        self.httpServer = [[HTTPServer alloc]init];
+    }
+    
+    [self.httpServer setType:@"_http._tcp."];
+    [self.httpServer setPort:6080];
+    
+    NSString *webPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"build"];
+    [self.httpServer setDocumentRoot:webPath];
+    NSLog(@"服务器路径：%@", webPath);
+    _startServer = [self startServerAction];
+}
+
+- (BOOL)startServerAction {//启动服务
+    BOOL ret = NO;
+    NSError *error = nil;
+    if( [self.httpServer start:&error]){
+        NSLog(@"HTTP服务器启动成功端口号为： %hu", [_httpServer listeningPort]);
+        ret = YES;
+    }else{
+        NSLog(@"启动HTTP服务器出错: %@", error);
+    }
+    return ret;
+}
+
+- (void)stopServer {//停止服务
+    if (self.httpServer != nil){
+        [self.httpServer stop];
+        _startServer = NO;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -42,13 +73,17 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
- 
+    if (_startServer){//停止本地服务器
+        [self stopServer];
+    }
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-
+    if (!_startServer){
+        _startServer = [self startServerAction];
+    }
 }
 
 

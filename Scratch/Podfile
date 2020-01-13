@@ -8,7 +8,7 @@ pod "MJRefresh"
 pod "MJExtension"
 pod "SVProgressHUD"
 pod "Masonry"
-
+pod 'CocoaHTTPServer'
 
 
 end

@@ -584,37 +584,35 @@ static NSString *IS_CURRENT_VIEW_KEY = @"isLeaveCurrentView";
 - (void)initSubViews {
     
     UIButton* back = [UIButton buttonWithType:UIButtonTypeCustom];
-    [back setBackgroundImage:[UIImage imageNamed:@"backNoraml"] forState:UIControlStateNormal];
-    [back setBackgroundImage:[UIImage imageNamed:@"backSelcted"] forState:UIControlStateSelected];
+    [back setBackgroundImage:[UIImage imageNamed:@"Back.png"] forState:UIControlStateNormal];
+    [back setBackgroundImage:[UIImage imageNamed:@"Back.png"] forState:UIControlStateSelected];
     [back addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-
-    back.frame = CGRectMake(30, 24, 40, 40);
-//    [back setBackgroundImage:[UIImage imageNamed:@"backNoraml_black"] forState:UIControlStateNormal];
-    [back setBackgroundImage:[UIImage imageNamed:@"backNoraml"] forState:UIControlStateNormal]; //白色
-    [self.view addSubview:back];
+//    back.frame = CGRectMake(30, 24, 40, 40);
+    [self.view addSubview:back];//34 × 52
     [back mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.mas_equalTo(40);
+        make.height.mas_equalTo(52/1.5);
+        make.width.mas_equalTo(34/1.5);
         make.top.equalTo(self.view).offset(24);
         make.right.equalTo(self.view).offset(-30);
     }];
     
     
-    UILabel* titleL = [[UILabel alloc] init];
-    [self.view addSubview:titleL];
-    titleL.textColor = kRGB(87, 94, 114);
-    titleL.textAlignment = NSTextAlignmentCenter;
-    titleL.textColor = [UIColor blackColor];
-    titleL.font = [UIFont systemFontOfSize:20.0];
-    titleL.frame =CGRectMake(0, 60, KScreen_width, 20);
-    titleL.hidden = YES;
-    titleL.text = @"设置";
-    [self.view addSubview:titleL];
-    self.titleLabel = titleL;
-    if (self.model) {
-        titleL.text = self.model.scratchName;
-    }else {
-       titleL.text = @"创建作品";
-    }
+//    UILabel* titleL = [[UILabel alloc] init];
+//    [self.view addSubview:titleL];
+//    titleL.textColor = kRGB(87, 94, 114);
+//    titleL.textAlignment = NSTextAlignmentCenter;
+//    titleL.textColor = [UIColor blackColor];
+//    titleL.font = [UIFont systemFontOfSize:20.0];
+//    titleL.frame =CGRectMake(0, 60, KScreen_width, 20);
+//    titleL.hidden = YES;
+//    titleL.text = @"设置";
+//    [self.view addSubview:titleL];
+//    self.titleLabel = titleL;
+//    if (self.model) {
+//        titleL.text = self.model.scratchName;
+//    }else {
+//       titleL.text = @"创建作品";
+//    }
     
 }
 
@@ -626,9 +624,9 @@ static NSString *IS_CURRENT_VIEW_KEY = @"isLeaveCurrentView";
         self.blueToothStatusTimer = nil;
     }
      //根据key值清空某个localStorage  localStorage.clear()
-    [self evaluateJavaScriptWithStr:@"localStorage.removeItem('title')" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-
-    }];
+//    [self evaluateJavaScriptWithStr:@"localStorage.removeItem('title')" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+//
+//    }];
     
 //    if ([[BluetoothCentralManager sharedManager].activeCentralManager isScanning]) {
 //        [[BluetoothCentralManager sharedManager] stopScanning];
@@ -640,11 +638,32 @@ static NSString *IS_CURRENT_VIEW_KEY = @"isLeaveCurrentView";
 //返回到上界面
 - (void)backAction {
     
-    NSString *method = [NSString stringWithFormat:@"moblileGoBack()"];
-    [self evaluateJavaScriptWithStr:method completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-        
+//    NSString *method = [NSString stringWithFormat:@"moblileGoBack()"];
+//    [self evaluateJavaScriptWithStr:method completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+//
+//    }];
+//    [self clickBackActions];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"确定要退出 ?" preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        NSLog(@"tap no button");
     }];
-    [self clickBackActions];
+    
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^ void (UIAlertAction *action){
+        NSLog(@"tap yes button");
+          [self popToLastVCActions];
+    }];
+    
+    [alertController addAction:noAction];
+    [alertController addAction: yesAction];
+    
+    //以模态框的形式显示
+    [self presentViewController:alertController animated:YES completion:^(){
+        NSLog(@"success");
+    }];
+    
+  
 }
 
 #pragma mark: --  webView 加载完成

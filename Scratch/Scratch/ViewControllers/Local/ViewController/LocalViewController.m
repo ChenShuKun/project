@@ -182,7 +182,7 @@ static NSString *CellID = @"LocalCollectionViewCellID" ;
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    LocalModel *model= self.dataArray1[indexPath.row];
+    LocalModel *model = self.dataArray1[indexPath.row];
     if ([model.iconUrl isEqualToString:@"creat"]) {
         
     /*
@@ -197,26 +197,48 @@ static NSString *CellID = @"LocalCollectionViewCellID" ;
         }
         NSLog(@" 测试 存储数据 write = %@ ",@(write));
      */
+        NSString *url = @"http://localhost:6080?islocal=1";
+        ScratchWebViewController * create = [[ScratchWebViewController alloc] initWithURLString:url andTitle:@"create"];
+        [self.navigationController pushViewController:create animated:YES];
 
-        
     }else {
         
-        NSLog(@"aaa = %@",model.titleStr);
-        AlertPromptView *views = [[AlertPromptView alloc] initWithFrame:CGRectZero];
-        [views reSetTitle:@"我是测试内容"];
-        [views alertShow];
-        views.cancleBlock = ^(UIButton * _Nonnull cancleBtn) {
-          
-            NSLog(@"cancleBlock");
-
+        
+        //用户的作品
+        NSLog(@" 作品名称 ==%@",model.titleStr);
+        
+        LocalModel *localModel = [[LocalModel alloc]init];
+        localModel.localTitle = model.titleStr;
+        localModel.localContent = [FileManger fileManger_find_FileName:model.titleStr];
+        
+        
+        
+        ScratchModel *scratch = [[ScratchModel alloc]init];
+        
+        NSString *url = @"http://localhost:6080?islocal=1";
+        ScratchWebViewController * create = [[ScratchWebViewController alloc]initWithURLString:url andTitle:@"update"];
+        create.localModel = localModel;
+        create.model = scratch;
+        create.scratchBlock = ^(ScratchModel *model) {
         };
-        views.confirmDeleteBlock = ^(UIButton * _Nonnull confirmBtn) {
-          
-          NSLog(@"confirmDeleteBlock");
-
-        };
+        [self.navigationController pushViewController:create animated:YES];
     }
-    
+    /*
+     NSLog(@"aaa = %@",model.titleStr);
+     AlertPromptView *views = [[AlertPromptView alloc] initWithFrame:CGRectZero];
+     [views reSetTitle:@"我是测试内容"];
+     [views alertShow];
+     views.cancleBlock = ^(UIButton * _Nonnull cancleBtn) {
+     
+     NSLog(@"cancleBlock");
+     
+     };
+     views.confirmDeleteBlock = ^(UIButton * _Nonnull confirmBtn) {
+     
+     NSLog(@"confirmDeleteBlock");
+     
+     };
+     */
 }
 
 
