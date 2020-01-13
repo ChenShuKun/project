@@ -32,6 +32,7 @@
     //    self.iconImageView.image = [UIImage imageNamed:localModel.iconUrl];
     
     self.nameLabel.text = model.titleStr;
+    
     self.timeLabel.text = model.timeStr;
     
 }

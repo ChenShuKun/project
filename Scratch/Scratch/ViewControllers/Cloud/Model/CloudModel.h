@@ -12,10 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CloudModel : NSObject
 
+@property (nonatomic ,assign) NSInteger kid;
+
 @property (nonatomic ,copy) NSString *iconUrl;
 @property (nonatomic ,copy) NSString *titleStr;
 @property (nonatomic ,copy) NSString *timeStr;
+@property (nonatomic ,copy) NSString *etime;
 
+ 
 
 
 + (NSMutableArray *)getCloudData ;

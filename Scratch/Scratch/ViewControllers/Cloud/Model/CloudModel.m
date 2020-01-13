@@ -9,6 +9,30 @@
 #import "CloudModel.h"
 
 @implementation CloudModel
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    
+    return @{
+             @"kid":@"id",
+             @"iconUrl":@"bq",
+             @"titleStr":@"work_name"
+             };
+}
+
+- (void)setEtime:(NSString *)etime {
+    _etime = etime;
+    
+    
+    NSDate * myDate = [NSDate dateWithTimeIntervalSince1970: [etime doubleValue]];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Beijing"]];
+    NSString *dateString = [formatter stringFromDate: myDate];
+    self.timeStr = dateString;
+}
+ 
+- (void)asdfa {
+    
+}
 + (NSArray *)data {
     return @[
              @{@"iconUrl":@"",@"titleStr":@"云端作品01",@"timeStr":@"2018-12-21"},

@@ -32,8 +32,9 @@
 
 + (LocalModel *)creatModle {
     LocalModel *local = [[LocalModel alloc]init];
-    local.iconUrl = @"creat";
-    local.titleStr = @"本地创作";
+    local.iconUrl = @"";
+    local.titleStr = @"本地作品";
+    local.type = @"1";
     return local;
 }
 

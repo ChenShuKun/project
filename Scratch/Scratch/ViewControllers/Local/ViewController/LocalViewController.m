@@ -252,26 +252,68 @@ static NSString *CellID = @"LocalCollectionViewCellID" ;
         return;
     }
     
-    
     NSLog(@"上传到云端接口");
+    [self test_upLoadBtnActions:button andModel:model andIndexPath:indexPath];
+    
+}
+
+
+// 上传 sb3 文件到服务器
+- (void)test_upLoadBtnActions:(UIButton *)button andModel:(LocalModel *)model andIndexPath:(NSIndexPath *)indexPath {
+
+    NSString *content = [FileManger fileManger_find_FileName:model.timeStr];
+    if ([content length] <= 0) {
+        content = @"";
+    }
+    NSString *test = [content stringByReplacingOccurrencesOfString:@"data:application/zip;base64," withString:@""];
+    NSData* decodeData = [[NSData alloc] initWithBase64EncodedString:test options:0];
+    //本地文件的路径 方式3
+    BOOL writeSucceed = [FileManger writeTempContent:decodeData];
+    NSLog(@"- writeSucceed---%@",@(writeSucceed));
+    NSDictionary *params = @{@"type":@"add",
+                             @"name":model.titleStr,
+                             @"id":@(0),
+                             @"studentId":[UserManager userInfo].userid
+                             };
+    __WeakSelf(self);
+    NSString *url = [NSString stringWithFormat:@"%@mobile_student/save_works",BASEURL];
+    
     [SKProgressHUD showLoading];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SKProgressHUD dismissLoading];
-        [self upLoadSucceed:@{} andIndexPath:indexPath];
-    });
-    
+    [ScratchNetWork NetworkPOST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+        //本地文件的路径
+        NSString *filePath = [FileManger tempContentPath];
+        NSURL *url = [NSURL fileURLWithPath:filePath];
+        [formData appendPartWithFileURL:url name:@"content" error:nil];
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+        NSLog(@"完成百分 比 = %f%%",uploadProgress.fractionCompleted*100);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        
+        [FileManger removeTempContent];
+        NSLog(@"responseObject = %@",responseObject);
+        
+        if ([ScratchNetWork isValidResponse:responseObject]) {
+            //本地删除操作，
+            [weakself deleteSucceedModel:model result:responseObject andIndexPath:indexPath];
+            [SKProgressHUD showSuccessWithStatus:[ScratchNetWork getToastMsg:responseObject]];
+            [weakself.dataArray1 removeObjectAtIndex:indexPath.row];
+            [weakself.collectView1 reloadData];
+        }else {
+             [SKProgressHUD showErrorWithStatus:[ScratchNetWork getToastMsg:responseObject]];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        
+        NSLog(@"error = %@",error.description);
+        [FileManger removeTempContent];
+        [SKProgressHUD showErrorWithStatus:error.localizedDescription];
+    }];
 }
 
-- (void)upLoadSucceed:(NSDictionary *)result andIndexPath:(NSIndexPath *)indexPath {
-    
-    [SKProgressHUD showSuccessWithStatus:@"上传成功"];
-    
-    
-    [self.dataArray1 removeObjectAtIndex:indexPath.row];
-    [self.collectView1 reloadData];
-    
-}
 
+/// 删除 弹框
 - (void)deleteButtonAction:(UIButton *)button andModel:(LocalModel *)model andIndexPath:(NSIndexPath *)indexPath  {
  
      UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"确定要删除 ?" preferredStyle: UIAlertControllerStyleAlert];
@@ -300,5 +342,13 @@ static NSString *CellID = @"LocalCollectionViewCellID" ;
     
 }
 
+// 删除成功以后的操作
+- (void)deleteSucceedModel:(LocalModel *)model result:(NSDictionary *)result andIndexPath:(NSIndexPath *)indexPath {
+    
+    FileManger *file = [[FileManger alloc]init];
+    file.fileName = model.titleStr;
+    BOOL delete = [file fileManger_remove];
+    NSLog(@"删除 成功 = %@",@(delete));
+}
 
 @end

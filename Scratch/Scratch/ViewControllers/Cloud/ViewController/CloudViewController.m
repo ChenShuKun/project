@@ -198,6 +198,14 @@ static NSString *CellID = @"CloudCollectionViewCellID" ;
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     CloudModel *model= self.dataArray1[indexPath.row];
     NSLog(@"aaa = %@",model.titleStr);
+    
+    ScratchModel *scratch = [[ScratchModel alloc]init];
+    
+    NSString *urlString = @"http://localhost:6080?islocal=3&";
+    NSString *url = [NSString stringWithFormat:@"%@taskId=%@&studentId=%@&submitId=%@",urlString,@(model.kid),[UserManager userInfo].userid,@(model.kid)];
+    ScratchWebViewController * create = [[ScratchWebViewController alloc] initWithURLString:url andTitle:@""];
+    create.model = scratch;
+    [self.navigationController pushViewController:create animated:YES];
 
 }
 
@@ -213,10 +221,10 @@ static NSString *CellID = @"CloudCollectionViewCellID" ;
        }];
        
        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^ void (UIAlertAction *action){
-
-           
+        
            NSLog(@"---- 发送网络请求 然后删除 ");
-           [self deleteSucceed:@{} indexPath:indexPath];
+           [self deleteWrokWithModel:model andIndexPath:indexPath];
+           
        }];
        
        [alertController addAction:noAction];
@@ -229,14 +237,42 @@ static NSString *CellID = @"CloudCollectionViewCellID" ;
 }
 
 
-- (void)deleteSucceed:(NSDictionary *)dict indexPath:(NSIndexPath *)indexPath {
+#pragma mark:--和服务器进行数据交互 （删除作品）
+- (void)deleteWrokWithModel:(CloudModel *)model andIndexPath:(NSIndexPath *)indexPath  {
     
+    if (![UserManager userIsLogin]) {
+        NSLog(@" 用户没登录  ");
+        return;
+    }
     
+    NSString *url = [NSString stringWithFormat:@"%@mobile_student/del_works",BASEURL];
+    NSDictionary *params = @{@"student_id":[UserManager userInfo].userid,
+                             @"id":@(model.kid)
+                             };
+    __WeakSelf(self);
+    [SKProgressHUD showLoading];
+    [ScratchNetWork NetworkPOSTURL:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSLog(@" 成功 返回数据 = %@",responseObject);
+        if ([ScratchNetWork isValidResponse:responseObject]) {
+            
+            [weakself deleteSucceed:responseObject andIndexPath:indexPath];
+        }else {
+            [SKProgressHUD showErrorWithStatus:[ScratchNetWork getToastMsg:responseObject]];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
+
+//删除成功以后的操作
+- (void)deleteSucceed:(NSDictionary *)result andIndexPath:(NSIndexPath *)indexPath {
     
+    [SKProgressHUD showSuccessWithStatus:[ScratchNetWork getToastMsg:result]];
+   
     [self.dataArray1 removeObjectAtIndex:indexPath.row];
     [self.collectView1 reloadData];
 }
-
 
 
 #pragma mark:--API

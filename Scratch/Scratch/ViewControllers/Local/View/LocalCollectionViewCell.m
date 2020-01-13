@@ -16,7 +16,6 @@
     // Initialization code
     self.layer.borderColor = [UIColor lightTextColor].CGColor;
     self.layer.borderWidth = 2;
-
 }
 
 // 308 200
@@ -26,18 +25,20 @@
 //    self.iconImageView.image = [UIImage imageNamed:localModel.iconUrl];
     
     self.titleLabel.text = localModel.titleStr;
-    NSString *time = [FileManger getSaveTimeWithkey:localModel.titleStr];
-    NSLog(@"localModel.titleStr = %@   time= %@" ,localModel.titleStr,time);
-    self.timeLabel.text = time;
+//    NSString *time = [FileManger getSaveTimeWithkey:localModel.titleStr];
+    self.timeLabel.text = localModel.timeStr;
     
-    if ([localModel.iconUrl isEqualToString:@"creat"]) {
+    if ([localModel.type integerValue] == 1) {
+       
         self.timeLabel.hidden = YES;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.uploadButton.hidden = YES;
+        self.deleteBtn.hidden = YES;
     }else {
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.uploadButton.hidden = NO;
         self.timeLabel.hidden = NO;
+        self.deleteBtn.hidden = NO;
     }
 }
 

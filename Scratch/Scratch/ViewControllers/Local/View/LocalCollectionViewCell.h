@@ -19,6 +19,7 @@ typedef void(^DeleteBtnBlock)(UIButton *button,LocalModel *model);//上传按钮
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
 
 @property (nonatomic ,strong) LocalModel *localModel;
 

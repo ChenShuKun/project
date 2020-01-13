@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic ,copy) NSString *titleStr;
 @property (nonatomic ,copy) NSString *timeStr;
 
-
+@property (nonatomic ,copy) NSString *type; // == @"1" 是local
 
 + (NSMutableArray *)getLocalModelArray;
 
