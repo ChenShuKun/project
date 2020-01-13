@@ -161,6 +161,9 @@
 }
 
 - (void)loginSucceed:(NSDictionary *)result {
+    
+    BOOL saveSucced = [UserManager saveUserInfo:result[kdata]];
+    NSLog(@" saveSucced  = %@",@(saveSucced));
 
     [SKProgressHUD showSuccessWithStatus:[ScratchNetWork getToastMsg:result] ];
     

@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic ,strong) NSMutableArray *dataArray;
 @property (nonatomic ,strong) NSMutableArray *viewControllViewsArray;
+@property (weak, nonatomic) IBOutlet UIButton *goLoginBtn;
+@property (strong, nonatomic) UIButton *userInforBtn;
+
 @end
 
 @implementation MainViewController
@@ -27,6 +30,49 @@
 - (void)dealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadIsLoginOrUserInfo];
+}
+
+
+- (UIButton *)userInforBtn {
+    if (!_userInforBtn) {
+        
+        _userInforBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _userInforBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+        [_userInforBtn addTarget:self action:@selector(goLogoutButtonActions:) forControlEvents:UIControlEventTouchUpInside];
+        _userInforBtn.backgroundColor = [UIColor mainColor];
+        [self.view addSubview:_userInforBtn];
+        [_userInforBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(140);
+            make.height.mas_equalTo(34);
+            make.top.equalTo(self.view.mas_top).offset(44);
+            make.right.equalTo(self.view.mas_right).offset(-10);
+        }];
+    }
+    return _userInforBtn;
+}
+
+- (void)loadIsLoginOrUserInfo {
+    
+    if ([UserManager userIsLogin]) {
+        
+        self.userInforBtn.hidden = NO;
+        self.goLoginBtn.hidden = YES;
+        [self loadUserInforActions];
+    }else {
+        self.userInforBtn.hidden = YES;
+        self.goLoginBtn.hidden = NO;
+    }
+}
+
+- (void)viewDidLayoutSubviews {
+    
+    self.userInforBtn.layer.cornerRadius = self.userInforBtn.frame.size.height /2;
+    self.userInforBtn.clipsToBounds = YES;
 }
 
 - (void)viewDidLoad {
@@ -99,6 +145,41 @@
     }
 }
 
+//退出登录
+- (IBAction)goLogoutButtonActions:(UIButton *)sender {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"确定要退出登录 ?" preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        NSLog(@"tap no button");
+    }];
+    
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^ void (UIAlertAction *action){
+
+        [self logOuntSucceedActions];
+    }];
+    
+    [alertController addAction:noAction];
+    [alertController addAction: yesAction];
+    
+    //以模态框的形式显示
+    [self presentViewController:alertController animated:true completion:^(){
+        NSLog(@"success");
+    }];
+ 
+}
+
+
+// 退出成功 操作
+- (void)logOuntSucceedActions {
+
+    [SKProgressHUD showSuccessWithStatus:@"退出登录成功"];
+    BOOL succeed =[UserManager clearUserInfo];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loadIsLoginOrUserInfo];
+    });
+    NSLog(@"退出以后 是否删除成功 =- %@",@(succeed));
+}
 
 #pragma mark:-- UITableView DataSource
 
@@ -215,8 +296,17 @@
         
         if ([str isEqualToString:@"1"]) {
             [view removeFromSuperview];
+            [self loadIsLoginOrUserInfo];
         }
     };
+    
+}
+
+//加载 用户的 信息
+- (void)loadUserInforActions {
+    
+    UserInfor *userInfo = [UserManager userInfo];
+    [self.userInforBtn setTitle:userInfo.real_name forState:UIControlStateNormal];
     
 }
 

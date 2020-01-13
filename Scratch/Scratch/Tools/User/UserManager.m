@@ -13,16 +13,9 @@
 
 - (NSString *)userid {
     if (_userid == nil) {
-        return @"217";
+        return @"";
     }
     return _userid;
-}
-
-- (NSInteger)school_id {
-    if (_school_id ==0) {
-        return 2;
-    }
-    return _school_id;
 }
 
 - (NSString *)user_remark {
@@ -97,9 +90,6 @@
 
 //是否登录
 + (BOOL)userIsLogin {
-    
-    return YES;
-    
     
     NSInteger user_id = [[self userInfo].userid integerValue];
     if (user_id > 0) {
